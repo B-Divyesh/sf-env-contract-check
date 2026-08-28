@@ -1,0 +1,267 @@
+{
+  "communities": {
+    "0": [
+      "axe_core_playwright",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_axe_core_playwright",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_typescript",
+      "package_devdependencies_vite",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_build_site",
+      "package_scripts_dev",
+      "package_scripts_dev_site",
+      "package_scripts_test",
+      "package_scripts_test_site",
+      "package_type",
+      "package_version",
+      "playwright_test",
+      "typescript",
+      "vite"
+    ],
+    "1": [
+      "crates_env_contract_check_src_main",
+      "crates_env_contract_check_src_main_checkargs",
+      "crates_env_contract_check_src_main_cli",
+      "crates_env_contract_check_src_main_command",
+      "crates_env_contract_check_src_main_main",
+      "crates_env_contract_check_src_main_profile",
+      "crates_env_contract_check_src_main_profile_from",
+      "crates_env_contract_check_src_main_profilearg",
+      "crates_env_contract_check_src_main_read",
+      "crates_env_contract_check_src_main_rs_option",
+      "crates_env_contract_check_src_main_rs_result",
+      "crates_env_contract_check_src_main_rs_self",
+      "crates_env_contract_check_src_main_rs_string",
+      "crates_env_contract_check_src_main_run",
+      "crates_env_contract_check_tests_cli",
+      "crates_env_contract_check_tests_cli_documented_json_example_runs_without_disclosing_secret",
+      "crates_env_contract_check_tests_cli_unreadable_input_uses_exit_two",
+      "exitcode",
+      "from",
+      "pathbuf"
+    ],
+    "2": [
+      "site_src_main",
+      "site_src_main_copy",
+      "site_src_main_copystatus",
+      "site_src_main_finding",
+      "site_src_main_form",
+      "site_src_main_input",
+      "site_src_main_inspect",
+      "site_src_main_known",
+      "site_src_main_level",
+      "site_src_main_offlinenote",
+      "site_src_main_panel",
+      "site_src_main_parse",
+      "site_src_main_profile",
+      "site_src_main_profileselect",
+      "site_src_main_required",
+      "site_src_main_reset",
+      "site_src_main_setpanel",
+      "site_src_main_updateoffline"
+    ],
+    "3": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_es2022",
+      "ref_src_ts",
+      "ref_vite_client",
+      "site_tsconfig",
+      "site_tsconfig_compileroptions",
+      "site_tsconfig_compileroptions_lib",
+      "site_tsconfig_compileroptions_module",
+      "site_tsconfig_compileroptions_moduleresolution",
+      "site_tsconfig_compileroptions_noemit",
+      "site_tsconfig_compileroptions_strict",
+      "site_tsconfig_compileroptions_target",
+      "site_tsconfig_compileroptions_types",
+      "site_tsconfig_compileroptions_usedefineforclassfields",
+      "site_tsconfig_include"
+    ],
+    "4": [
+      "crates_env_contract_check_src_lib",
+      "crates_env_contract_check_src_lib_check",
+      "crates_env_contract_check_src_lib_checkoptions",
+      "crates_env_contract_check_src_lib_clean_node_file_passes",
+      "crates_env_contract_check_src_lib_invalid_contracts_are_rejected",
+      "crates_env_contract_check_src_lib_parse_env",
+      "crates_env_contract_check_src_lib_parser_profiles_disagree_about_quotes",
+      "crates_env_contract_check_src_lib_profile",
+      "crates_env_contract_check_src_lib_python_export_and_interpolation_are_profile_specific",
+      "crates_env_contract_check_src_lib_secret_values_never_serialize",
+      "crates_env_contract_check_src_lib_seeded_faults_are_detected",
+      "crates_env_contract_check_src_lib_surrounded_by_quote",
+      "fromstr"
+    ],
+    "5": [
+      "crates_env_contract_check_src_lib_decode_double_quoted",
+      "crates_env_contract_check_src_lib_diagnostic",
+      "crates_env_contract_check_src_lib_parse_dotenv_value",
+      "crates_env_contract_check_src_lib_rs_option",
+      "crates_env_contract_check_src_lib_severity",
+      "crates_env_contract_check_src_lib_type_error",
+      "crates_env_contract_check_src_lib_validate_type",
+      "crates_env_contract_check_src_lib_valuetype",
+      "crates_env_contract_check_src_lib_variablerule",
+      "into",
+      "vec"
+    ],
+    "6": [
+      "btreemap",
+      "crates_env_contract_check_src_lib_compare",
+      "crates_env_contract_check_src_lib_contract",
+      "crates_env_contract_check_src_lib_looks_like_placeholder",
+      "crates_env_contract_check_src_lib_looks_sensitive_key",
+      "crates_env_contract_check_src_lib_parsedenv",
+      "crates_env_contract_check_src_lib_parsedvalue",
+      "crates_env_contract_check_src_lib_rs_string",
+      "crates_env_contract_check_src_lib_validate_values"
+    ],
+    "7": [
+      "crates_env_contract_check_src_lib_parse_contract",
+      "crates_env_contract_check_src_lib_profile_as_str",
+      "crates_env_contract_check_src_lib_profile_from_str",
+      "crates_env_contract_check_src_lib_rs_result",
+      "crates_env_contract_check_src_lib_rs_self",
+      "crates_env_contract_check_src_lib_valid_key",
+      "crates_env_contract_check_src_lib_validate_contract_shape",
+      "err"
+    ],
+    "8": [
+      "crates_env_contract_check_src_lib_codes",
+      "crates_env_contract_check_src_lib_diffentry",
+      "crates_env_contract_check_src_lib_diffstate",
+      "crates_env_contract_check_src_lib_report",
+      "crates_env_contract_check_src_lib_summary",
+      "crates_env_contract_check_src_main_print_human"
+    ],
+    "9": [
+      "site_public_sw",
+      "site_public_sw_shell"
+    ],
+    "10": [
+      "pkg_env_contract_check"
+    ],
+    "11": [
+      "playwright_config"
+    ],
+    "12": [
+      "site_tests_site_spec"
+    ],
+    "13": [
+      "site_vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.09523809523809523,
+    "1": 0.16842105263157894,
+    "2": 0.11764705882352941,
+    "3": 0.125,
+    "4": 0.2948717948717949,
+    "5": 0.3090909090909091,
+    "6": 0.4722222222222222,
+    "7": 0.35714285714285715,
+    "8": 0.3333333333333333,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0
+  },
+  "gods": [
+    {
+      "id": "crates_env_contract_check_src_lib_check",
+      "label": "check()",
+      "degree": 15
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_diagnostic",
+      "label": "Diagnostic",
+      "degree": 12
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_validate_values",
+      "label": "validate_values()",
+      "degree": 12
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_profile",
+      "label": "Profile",
+      "degree": 9
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_contract",
+      "label": "Contract",
+      "degree": 9
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_report",
+      "label": "Report",
+      "degree": 9
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_compare",
+      "label": "compare()",
+      "degree": 9
+    },
+    {
+      "id": "crates_env_contract_check_src_main_run",
+      "label": "run()",
+      "degree": 9
+    },
+    {
+      "id": "site_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 9
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_variablerule",
+      "label": "VariableRule",
+      "degree": 7
+    }
+  ],
+  "surprises": [
+    {
+      "source": "run()",
+      "target": "parse_contract()",
+      "source_files": [
+        "crates/env-contract-check/src/main.rs",
+        "crates/env-contract-check/src/lib.rs"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "run()",
+      "target": "check()",
+      "source_files": [
+        "crates/env-contract-check/src/main.rs",
+        "crates/env-contract-check/src/lib.rs"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "print_human()",
+      "target": "Report",
+      "source_files": [
+        "crates/env-contract-check/src/main.rs",
+        "crates/env-contract-check/src/lib.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
