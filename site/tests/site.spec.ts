@@ -48,8 +48,9 @@ test("keyboard path reaches and runs the primary demo action", async ({ page }) 
   await expect(page.locator("#result-panel")).toContainText("Contract holds");
 });
 
-test("mobile layout has no horizontal overflow", async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== "mobile-390");
+test("390px layout has no horizontal overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.reload();
   const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, width: document.documentElement.clientWidth }));
   expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.width);
   await expect(page.getByRole("link", { name: "Install the CLI" })).toBeVisible();
