@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4ebd6" />
+    <meta name="description" content="Validate typed .env contracts against Node, Python, and Docker parser semantics before deployment." />
+    <title>Env Contract Check — catch parser drift before runtime</title>
+    <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Env Contract Check home">
+        <span class="registration-mark" aria-hidden="true"></span>
+        <span>env / contract / check</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#demo">Try the demo</a>
+        <a href="#install">Install</a>
+        <a class="nav-github" href="https://github.com/B-Divyesh/sf-env-contract-check">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true">●</span> Offline parser proof</p>
+          <h1 id="hero-title">Same <code>.env</code>.<br />Different runtime.</h1>
+          <p class="lede">Catch missing keys, quote drift, bad coercion, unsafe placeholders, and environment drift <em>before</em> your service starts.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#install">Install the CLI</a>
+            <a class="button button-quiet" href="#demo">Test parser meaning</a>
+          </div>
+          <ul class="proof-list" aria-label="Product guarantees">
+            <li>No network</li>
+            <li>No telemetry</li>
+            <li>No secret output</li>
+          </ul>
+        </div>
+        <figure class="hero-art">
+          <picture>
+            <source media="(max-width: 700px)" srcset="/registration-press-720.webp" />
+            <img src="/registration-press.webp" width="1440" height="960" alt="Three cyan, vermilion, and violet risograph parser plates overlap at a central registration target." fetchpriority="high" />
+          </picture>
+          <figcaption><span>Fig. 01</span> One file, three semantic plates.</figcaption>
+        </figure>
+      </section>
+
+      <section class="parser-strip" aria-label="Supported parser profiles">
+        <div class="plate plate-node"><span>01</span><strong>Node</strong><small>dotenv quoting + escapes</small></div>
+        <div class="plate plate-docker"><span>02</span><strong>Docker</strong><small>literal quotes, no expansion</small></div>
+        <div class="plate plate-python"><span>03</span><strong>Python</strong><small>export + interpolation signals</small></div>
+      </section>
+
+      <section class="demo-section" id="demo" aria-labelledby="demo-title">
+        <div class="section-intro">
+          <p class="eyebrow">Live semantic plate</p>
+          <h2 id="demo-title">See what the runtime sees.</h2>
+          <p>This browser demo uses the same core rules for the most common quoting fault. Text stays in this tab and is discarded when you leave.</p>
+        </div>
+        <form class="demo-workbench" id="demo-form">
+          <div class="editor-sheet">
+            <div class="editor-heading">
+              <label for="env-input">Environment file</label>
+              <span>.env</span>
+            </div>
+            <textarea id="env-input" name="environment" rows="9" spellcheck="false" autocapitalize="off">APP_PORT="3000"
+DEBUG="false"
+DATABASE_URL="https://db.internal/app"
+LOG_LEVEL=info</textarea>
+            <p class="field-hint" id="env-hint">Try removing a key, adding <code>EXTRA=1</code>, or switching profiles.</p>
+          </div>
+
+          <div class="contract-sheet" aria-label="Demo contract">
+            <div class="editor-heading"><span>Contract</span><span>env.contract.toml</span></div>
+            <pre aria-label="Typed environment contract"><code><span class="toml-key">[variables.APP_PORT]</span>
+type = <span class="toml-value">"integer"</span>
+required = <span class="toml-bool">true</span>
+
+<span class="toml-key">[variables.DEBUG]</span>
+type = <span class="toml-value">"boolean"</span>
+required = <span class="toml-bool">true</span>
+
+<span class="toml-key">[variables.DATABASE_URL]</span>
+type = <span class="toml-value">"url"</span>
+secret = <span class="toml-bool">true</span></code></pre>
+          </div>
+
+          <div class="demo-controls">
+            <div class="profile-control">
+              <label for="profile">Target parser</label>
+              <select id="profile" name="profile">
+                <option value="node">Node</option>
+                <option value="docker">Docker</option>
+                <option value="python">Python</option>
+              </select>
+            </div>
+            <button class="button button-primary" type="submit">Check contract</button>
+            <button class="text-button" id="reset-demo" type="button">Reset example</button>
+          </div>
+
+          <div class="result-panel is-empty" id="result-panel" tabindex="-1" aria-live="polite" aria-atomic="true">
+            <div class="result-status"><span class="status-mark" aria-hidden="true">○</span><strong>Ready to inspect</strong></div>
+            <p>Choose the runtime that will consume this file, then check its contract.</p>
+          </div>
+        </form>
+        <p class="offline-note" id="offline-note" hidden><strong>You’re offline.</strong> Good news: the demo and docs still work; nothing needed a server.</p>
+      </section>
+
+      <section class="workflow" aria-labelledby="workflow-title">
+        <div class="section-intro">
+          <p class="eyebrow">CI-sized workflow</p>
+          <h2 id="workflow-title">Contract. Parse. Prove.</h2>
+        </div>
+        <ol class="workflow-list">
+          <li><span>01</span><div><h3>Write the contract once</h3><p>Required, typed, bounded, secret-aware. TOML stays reviewable beside your code.</p></div></li>
+          <li><span>02</span><div><h3>Name the real parser</h3><p>Node, Python, and Docker do not always agree about quotes, comments, or expansion.</p></div></li>
+          <li><span>03</span><div><h3>Fail before startup</h3><p>Human output locally; stable JSON and deliberate exit codes in CI. Values stay redacted.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="install-section" id="install" aria-labelledby="install-title">
+        <div>
+          <p class="eyebrow">Version 0.1.0 · MIT</p>
+          <h2 id="install-title">Put it before <code>docker run</code>.</h2>
+          <p>Build the single binary from source today. Release binaries can drop into the same CI command later.</p>
+        </div>
+        <div class="install-terminal">
+          <div class="terminal-top"><span aria-hidden="true">● ● ●</span><span>terminal</span></div>
+          <pre><code id="install-command">cargo install --git https://github.com/B-Divyesh/sf-env-contract-check</code></pre>
+          <button class="copy-button" id="copy-command" type="button" aria-describedby="copy-status">Copy command</button>
+          <span id="copy-status" class="sr-only" aria-live="polite"></span>
+        </div>
+        <pre class="usage-code" aria-label="Command line example"><code>$ env-contract-check check \
+  --contract env.contract.toml \
+  --env .env.production \
+  --profile docker \
+  --deny-warnings
+
+ERROR [invalid_type] APP_PORT — expected a base-10 integer
+Result: FAIL · 1 error(s), 1 warning(s)</code></pre>
+      </section>
+
+      <section class="privacy-promise" aria-labelledby="privacy-title">
+        <span class="registration-mark large" aria-hidden="true"></span>
+        <div><p class="eyebrow">A deliberately boring data policy</p><h2 id="privacy-title">Your secrets never become our data.</h2></div>
+        <p>The CLI is offline. The demo has no backend. There are no analytics, cookies, accounts, uploads, or local storage.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div><span class="wordmark"><span class="registration-mark" aria-hidden="true"></span><span>env / contract / check</span></span><p>Open-source configuration proof for humans and CI.</p></div>
+      <nav aria-label="Footer navigation"><a href="https://github.com/B-Divyesh/sf-env-contract-check">Source</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+      <p>Built by the Param Factory · 2026</p>
+    </footer>
+  </body>
+</html>

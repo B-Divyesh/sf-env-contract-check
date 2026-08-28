@@ -1,0 +1,20 @@
+{
+  "name": "env-contract-check-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev:site",
+    "dev:site": "vite --config site/vite.config.ts",
+    "test": "cargo test --workspace && npm run build:site && playwright test",
+    "test:site": "npm run build:site && playwright test",
+    "build": "cargo build --release --locked && cargo package --manifest-path crates/env-contract-check/Cargo.toml --locked --allow-dirty && npm run build:site",
+    "build:site": "tsc -p site/tsconfig.json --noEmit && vite build --config site/vite.config.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.58.2",
+    "typescript": "5.9.2",
+    "vite": "7.3.6"
+  }
+}
