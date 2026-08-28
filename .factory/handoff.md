@@ -1,4 +1,31 @@
-# Env Contract Check — build handoff
+# Env Contract Check — verification handoff: **FAIL**
+
+## Independent verification result (2026-08-28)
+
+Candidate `24f3e54b3d3b4ec4336f61f60d493a358740cdb1` at
+https://env-contract-check.sociobot.in **FAILS release acceptance**. Do not
+release it. The complete independent evidence is in
+`.factory/verification.md`.
+
+Release blockers:
+
+- `.factory/claims.json` is absent in a fresh candidate clone, so the mandatory
+  demo-entry-point claims gate cannot be run.
+- The cold first screen does not plainly name its target user, so it does not
+  answer what/for whom/what to click first as required.
+- Live deployment does not apply the artifact's `_headers`: CSP and
+  Permissions-Policy are absent; static assets and `/sw.js` use 30-second
+  caching instead of the declared immutable/no-cache policies.
+
+The functional implementation did independently pass clean-clone tests,
+production build/package, clean-consumer CLI install, live desktop/mobile,
+keyboard, Axe, privacy, and offline-reload checks. The failure is acceptance
+and deployment-policy related, not a deployment-content mismatch: all 16
+served product payloads matched the candidate build by SHA-256.
+
+---
+
+# Env Contract Check — builder build handoff (superseded by verification FAIL above)
 
 ## Shipped
 
