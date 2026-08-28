@@ -1,0 +1,12 @@
+{
+  "slug": "env-contract-check",
+  "title": "Env Contract Check",
+  "territory": "devtools-data",
+  "user": "Developers maintaining .env files across laptops, CI, Docker, and deployments who need to catch semantic configuration mistakes before they reach a running service.",
+  "smallest_useful_product": "A CLI that validates .env files against a typed contract, applies Docker/Node/Python parser profiles, flags unset/unused/unsafe values, and renders a redacted environment diff.",
+  "success_measure": "In seeded tests across three parser profiles, the CLI catches 95% of quoting, coercion, and missing-key faults before container start.",
+  "artifact_class": "cli",
+  "monetization": "free",
+  "constraints": "Never print secret values; contracts should distinguish secret presence from content and work offline in CI.",
+  "state": "RESEARCHED"
+}
