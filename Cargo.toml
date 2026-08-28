@@ -1,0 +1,15 @@
+[workspace]
+members = ["crates/env-contract-check"]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/B-Divyesh/sf-env-contract-check"
+rust-version = "1.85"
+
+[profile.release]
+lto = "thin"
+strip = true
+codegen-units = 1
+

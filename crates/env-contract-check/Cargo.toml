@@ -1,0 +1,26 @@
+[package]
+name = "env-contract-check"
+version = "0.1.0"
+description = "Validate parser-specific .env semantics against a typed contract"
+categories = ["command-line-utilities", "development-tools"]
+keywords = ["dotenv", "environment", "validation", "ci"]
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+readme = "../../README.md"
+
+[[bin]]
+name = "env-contract-check"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.5.46", features = ["derive"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.143"
+toml = "0.9.5"
+url = "2.5.7"
+
+[dev-dependencies]
+tempfile = "3.21.0"
+
