@@ -48,7 +48,7 @@
       "file_type": "code",
       "norm_label": "inspect()",
       "source_file": "site/src/main.ts",
-      "source_location": "L64"
+      "source_location": "L65"
     },
     {
       "id": "site_src_main_parse",
@@ -59,7 +59,7 @@
       "file_type": "code",
       "norm_label": "parse()",
       "source_file": "site/src/main.ts",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "site_src_main_setpanel",
@@ -70,7 +70,7 @@
       "file_type": "code",
       "norm_label": "setpanel()",
       "source_file": "site/src/main.ts",
-      "source_location": "L93"
+      "source_location": "L94"
     },
     {
       "id": "site_src_main_updateoffline",
@@ -81,7 +81,29 @@
       "file_type": "code",
       "norm_label": "updateoffline()",
       "source_file": "site/src/main.ts",
-      "source_location": "L179"
+      "source_location": "L185"
+    },
+    {
+      "id": "site_tests_claims_spec_fixture",
+      "label": "fixture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "fixture()",
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "site_tests_claims_spec_runbinary",
+      "label": "runBinary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "runbinary()",
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L10"
     },
     {
       "id": "package",
@@ -101,7 +123,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "package_devdependencies_axe_core_playwright",
@@ -111,7 +133,7 @@
       "file_type": "code",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "package_devdependencies_playwright_test",
@@ -121,7 +143,7 @@
       "file_type": "code",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -131,7 +153,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "package_devdependencies_vite",
@@ -141,7 +163,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "package_name",
@@ -181,7 +203,7 @@
       "file_type": "code",
       "norm_label": "build",
       "source_file": "package.json",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "package_scripts_build_site",
@@ -191,7 +213,7 @@
       "file_type": "code",
       "norm_label": "build:site",
       "source_file": "package.json",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "package_scripts_dev",
@@ -222,6 +244,16 @@
       "norm_label": "test",
       "source_file": "package.json",
       "source_location": "L9"
+    },
+    {
+      "id": "package_scripts_test_claims",
+      "label": "test:claims",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "test:claims",
+      "source_file": "package.json",
+      "source_location": "L11"
     },
     {
       "id": "package_scripts_test_site",
@@ -261,7 +293,7 @@
       "file_type": "concept",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "playwright_test",
@@ -271,7 +303,7 @@
       "file_type": "concept",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "typescript",
@@ -281,7 +313,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "vite",
@@ -291,7 +323,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "crates_env_contract_check_src_main",
@@ -311,7 +343,7 @@
       "file_type": "code",
       "norm_label": "checkargs",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L28"
+      "source_location": "L45"
     },
     {
       "id": "crates_env_contract_check_src_main_cli",
@@ -321,7 +353,7 @@
       "file_type": "code",
       "norm_label": "cli",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L16"
+      "source_location": "L20"
     },
     {
       "id": "crates_env_contract_check_src_main_command",
@@ -331,7 +363,17 @@
       "file_type": "code",
       "norm_label": "command",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L22"
+      "source_location": "L26"
+    },
+    {
+      "id": "crates_env_contract_check_src_main_demoargs",
+      "label": "DemoArgs",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "demoargs",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L34"
     },
     {
       "id": "crates_env_contract_check_src_main_main",
@@ -341,7 +383,17 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L75"
+      "source_location": "L92"
+    },
+    {
+      "id": "crates_env_contract_check_src_main_print_human",
+      "label": "print_human()",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "print_human()",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L179"
     },
     {
       "id": "crates_env_contract_check_src_main_profile",
@@ -351,7 +403,7 @@
       "file_type": "code",
       "norm_label": "profile",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L65"
+      "source_location": "L82"
     },
     {
       "id": "crates_env_contract_check_src_main_profile_from",
@@ -361,7 +413,7 @@
       "file_type": "code",
       "norm_label": ".from()",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L66"
+      "source_location": "L83"
     },
     {
       "id": "crates_env_contract_check_src_main_profilearg",
@@ -371,7 +423,7 @@
       "file_type": "code",
       "norm_label": "profilearg",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L59"
+      "source_location": "L76"
     },
     {
       "id": "crates_env_contract_check_src_main_read",
@@ -381,47 +433,7 @@
       "file_type": "code",
       "norm_label": "read()",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L117"
-    },
-    {
-      "id": "crates_env_contract_check_src_main_rs_option",
-      "label": "Option",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "option",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "crates_env_contract_check_src_main_rs_result",
-      "label": "Result",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "result",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "crates_env_contract_check_src_main_rs_self",
-      "label": "Self",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "self",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "crates_env_contract_check_src_main_rs_string",
-      "label": "String",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "string",
-      "source_file": "",
-      "source_location": ""
+      "source_location": "L174"
     },
     {
       "id": "crates_env_contract_check_src_main_run",
@@ -431,37 +443,27 @@
       "file_type": "code",
       "norm_label": "run()",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L86"
+      "source_location": "L103"
     },
     {
-      "id": "crates_env_contract_check_tests_cli",
-      "label": "cli.rs",
+      "id": "crates_env_contract_check_src_main_run_check",
+      "label": "run_check()",
       "_origin": "ast",
       "community": 1,
       "file_type": "code",
-      "norm_label": "cli.rs",
-      "source_file": "crates/env-contract-check/tests/cli.rs",
-      "source_location": "L1"
+      "norm_label": "run_check()",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L110"
     },
     {
-      "id": "crates_env_contract_check_tests_cli_documented_json_example_runs_without_disclosing_secret",
-      "label": "documented_json_example_runs_without_disclosing_secret()",
+      "id": "crates_env_contract_check_src_main_run_demo",
+      "label": "run_demo()",
       "_origin": "ast",
       "community": 1,
       "file_type": "code",
-      "norm_label": "documented_json_example_runs_without_disclosing_secret()",
-      "source_file": "crates/env-contract-check/tests/cli.rs",
-      "source_location": "L5"
-    },
-    {
-      "id": "crates_env_contract_check_tests_cli_unreadable_input_uses_exit_two",
-      "label": "unreadable_input_uses_exit_two()",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "unreadable_input_uses_exit_two()",
-      "source_file": "crates/env-contract-check/tests/cli.rs",
-      "source_location": "L39"
+      "norm_label": "run_demo()",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L140"
     },
     {
       "id": "exitcode",
@@ -484,6 +486,16 @@
       "source_location": ""
     },
     {
+      "id": "option",
+      "label": "Option",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "option",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "pathbuf",
       "label": "PathBuf",
       "_origin": "ast",
@@ -494,10 +506,110 @@
       "source_location": ""
     },
     {
+      "id": "report",
+      "label": "Report",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "report",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "result",
+      "label": "Result",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "result",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "self",
+      "label": "Self",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "self",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "site_public_sw",
+      "label": "sw.js",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "sw.js",
+      "source_file": "site/public/sw.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "site_public_sw_shell",
+      "label": "SHELL",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "shell",
+      "source_file": "site/public/sw.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "crates_env_contract_check_src_main_rs_option",
+      "label": "Option",
+      "_origin": "ast",
+      "community": 11,
+      "file_type": "code",
+      "norm_label": "option",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "crates_env_contract_check_src_main_rs_result",
+      "label": "Result",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "norm_label": "result",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "crates_env_contract_check_src_main_rs_self",
+      "label": "Self",
+      "_origin": "ast",
+      "community": 13,
+      "file_type": "code",
+      "norm_label": "self",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "crates_env_contract_check_src_main_rs_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "pkg_env_contract_check",
       "label": "env-contract-check",
       "_origin": "ast",
-      "community": 10,
+      "community": 15,
       "ecosystem": "cargo",
       "file_type": "code",
       "norm_label": "env-contract-check",
@@ -510,7 +622,7 @@
       "id": "playwright_config",
       "label": "playwright.config.ts",
       "_origin": "ast",
-      "community": 11,
+      "community": 16,
       "file_type": "code",
       "norm_label": "playwright.config.ts",
       "source_file": "playwright.config.ts",
@@ -520,7 +632,7 @@
       "id": "site_tests_site_spec",
       "label": "site.spec.ts",
       "_origin": "ast",
-      "community": 12,
+      "community": 17,
       "file_type": "code",
       "norm_label": "site.spec.ts",
       "source_file": "site/tests/site.spec.ts",
@@ -530,7 +642,7 @@
       "id": "site_vite_config",
       "label": "vite.config.ts",
       "_origin": "ast",
-      "community": 13,
+      "community": 18,
       "file_type": "code",
       "norm_label": "vite.config.ts",
       "source_file": "site/vite.config.ts",
@@ -647,170 +759,10 @@
       "source_location": "L21"
     },
     {
-      "id": "site_tsconfig",
-      "label": "tsconfig.json",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "tsconfig.json",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "site_tsconfig_compileroptions",
-      "label": "compilerOptions",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "compileroptions",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_lib",
-      "label": "lib",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "lib",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_module",
-      "label": "module",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "module",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_moduleresolution",
-      "label": "moduleResolution",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "moduleresolution",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_noemit",
-      "label": "noEmit",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "noemit",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_strict",
-      "label": "strict",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "strict",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_target",
-      "label": "target",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "target",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_types",
-      "label": "types",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "types",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "site_tsconfig_compileroptions_usedefineforclassfields",
-      "label": "useDefineForClassFields",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "usedefineforclassfields",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L4"
-    },
-    {
-      "id": "site_tsconfig_include",
-      "label": "include",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "include",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "ref_dom",
-      "label": "DOM",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "dom",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "ref_dom_iterable",
-      "label": "DOM.Iterable",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "dom.iterable",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "ref_es2022",
-      "label": "ES2022",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "es2022",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "ref_src_ts",
-      "label": "src/**/*.ts",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "src/**/*.ts",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "ref_vite_client",
-      "label": "vite/client",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "vite/client",
-      "source_file": "site/tsconfig.json",
-      "source_location": "L10"
-    },
-    {
       "id": "crates_env_contract_check_src_lib",
       "label": "lib.rs",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "lib.rs",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -820,7 +772,7 @@
       "id": "crates_env_contract_check_src_lib_check",
       "label": "check()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "check()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -830,7 +782,7 @@
       "id": "crates_env_contract_check_src_lib_checkoptions",
       "label": "CheckOptions",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "checkoptions",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -840,17 +792,27 @@
       "id": "crates_env_contract_check_src_lib_clean_node_file_passes",
       "label": "clean_node_file_passes()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "clean_node_file_passes()",
       "source_file": "crates/env-contract-check/src/lib.rs",
       "source_location": "L742"
     },
     {
+      "id": "crates_env_contract_check_src_lib_codes",
+      "label": "codes()",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "codes()",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L737"
+    },
+    {
       "id": "crates_env_contract_check_src_lib_invalid_contracts_are_rejected",
       "label": "invalid_contracts_are_rejected()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "invalid_contracts_are_rejected()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -860,7 +822,7 @@
       "id": "crates_env_contract_check_src_lib_parse_env",
       "label": "parse_env()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "parse_env()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -870,7 +832,7 @@
       "id": "crates_env_contract_check_src_lib_parser_profiles_disagree_about_quotes",
       "label": "parser_profiles_disagree_about_quotes()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "parser_profiles_disagree_about_quotes()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -880,7 +842,7 @@
       "id": "crates_env_contract_check_src_lib_profile",
       "label": "Profile",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "profile",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -890,17 +852,27 @@
       "id": "crates_env_contract_check_src_lib_python_export_and_interpolation_are_profile_specific",
       "label": "python_export_and_interpolation_are_profile_specific()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "python_export_and_interpolation_are_profile_specific()",
       "source_file": "crates/env-contract-check/src/lib.rs",
       "source_location": "L845"
     },
     {
+      "id": "crates_env_contract_check_src_lib_report",
+      "label": "Report",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "report",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L121"
+    },
+    {
       "id": "crates_env_contract_check_src_lib_secret_values_never_serialize",
       "label": "secret_values_never_serialize()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "secret_values_never_serialize()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -910,17 +882,27 @@
       "id": "crates_env_contract_check_src_lib_seeded_faults_are_detected",
       "label": "seeded_faults_are_detected()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "seeded_faults_are_detected()",
       "source_file": "crates/env-contract-check/src/lib.rs",
       "source_location": "L791"
     },
     {
+      "id": "crates_env_contract_check_src_lib_summary",
+      "label": "Summary",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "summary",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L114"
+    },
+    {
       "id": "crates_env_contract_check_src_lib_surrounded_by_quote",
       "label": "surrounded_by_quote()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "surrounded_by_quote()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -930,127 +912,177 @@
       "id": "fromstr",
       "label": "FromStr",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "fromstr",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "crates_env_contract_check_src_lib_decode_double_quoted",
-      "label": "decode_double_quoted()",
+      "id": "site_tsconfig",
+      "label": "tsconfig.json",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "decode_double_quoted()",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L406"
+      "norm_label": "tsconfig.json",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L1"
     },
     {
-      "id": "crates_env_contract_check_src_lib_diagnostic",
-      "label": "Diagnostic",
+      "id": "site_tsconfig_compileroptions",
+      "label": "compilerOptions",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "diagnostic",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L86"
+      "norm_label": "compileroptions",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L2"
     },
     {
-      "id": "crates_env_contract_check_src_lib_parse_dotenv_value",
-      "label": "parse_dotenv_value()",
+      "id": "site_tsconfig_compileroptions_lib",
+      "label": "lib",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "parse_dotenv_value()",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L341"
+      "norm_label": "lib",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L9"
     },
     {
-      "id": "crates_env_contract_check_src_lib_rs_option",
-      "label": "Option",
+      "id": "site_tsconfig_compileroptions_module",
+      "label": "module",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "option",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "module",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L5"
     },
     {
-      "id": "crates_env_contract_check_src_lib_severity",
-      "label": "Severity",
+      "id": "site_tsconfig_compileroptions_moduleresolution",
+      "label": "moduleResolution",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "severity",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L80"
+      "norm_label": "moduleresolution",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L6"
     },
     {
-      "id": "crates_env_contract_check_src_lib_type_error",
-      "label": "type_error()",
+      "id": "site_tsconfig_compileroptions_noemit",
+      "label": "noEmit",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "type_error()",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L614"
+      "norm_label": "noemit",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L8"
     },
     {
-      "id": "crates_env_contract_check_src_lib_validate_type",
-      "label": "validate_type()",
+      "id": "site_tsconfig_compileroptions_strict",
+      "label": "strict",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "validate_type()",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L546"
+      "norm_label": "strict",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L7"
     },
     {
-      "id": "crates_env_contract_check_src_lib_valuetype",
-      "label": "ValueType",
+      "id": "site_tsconfig_compileroptions_target",
+      "label": "target",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "valuetype",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L69"
+      "norm_label": "target",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L3"
     },
     {
-      "id": "crates_env_contract_check_src_lib_variablerule",
-      "label": "VariableRule",
+      "id": "site_tsconfig_compileroptions_types",
+      "label": "types",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "variablerule",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L53"
+      "norm_label": "types",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L10"
     },
     {
-      "id": "into",
-      "label": "Into",
+      "id": "site_tsconfig_compileroptions_usedefineforclassfields",
+      "label": "useDefineForClassFields",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "into",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "usedefineforclassfields",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L4"
     },
     {
-      "id": "vec",
-      "label": "Vec",
+      "id": "site_tsconfig_include",
+      "label": "include",
       "_origin": "ast",
-      "community": 5,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "vec",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "include",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "ref_dom",
+      "label": "DOM",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "dom",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "ref_dom_iterable",
+      "label": "DOM.Iterable",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "dom.iterable",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "ref_es2022",
+      "label": "ES2022",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "es2022",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "ref_src_ts",
+      "label": "src/**/*.ts",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "src/**/*.ts",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "ref_vite_client",
+      "label": "vite/client",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "vite/client",
+      "source_file": "site/tsconfig.json",
+      "source_location": "L10"
     },
     {
       "id": "btreemap",
       "label": "BTreeMap",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "btreemap",
       "source_file": "",
@@ -1060,7 +1092,7 @@
       "id": "crates_env_contract_check_src_lib_compare",
       "label": "compare()",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "compare()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -1070,17 +1102,37 @@
       "id": "crates_env_contract_check_src_lib_contract",
       "label": "Contract",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "contract",
       "source_file": "crates/env-contract-check/src/lib.rs",
       "source_location": "L46"
     },
     {
+      "id": "crates_env_contract_check_src_lib_diffentry",
+      "label": "DiffEntry",
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "diffentry",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L107"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_diffstate",
+      "label": "DiffState",
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "diffstate",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L99"
+    },
+    {
       "id": "crates_env_contract_check_src_lib_looks_like_placeholder",
       "label": "looks_like_placeholder()",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "looks_like_placeholder()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -1090,7 +1142,7 @@
       "id": "crates_env_contract_check_src_lib_looks_sensitive_key",
       "label": "looks_sensitive_key()",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "looks_sensitive_key()",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -1100,7 +1152,7 @@
       "id": "crates_env_contract_check_src_lib_parsedenv",
       "label": "ParsedEnv",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "parsedenv",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -1110,7 +1162,7 @@
       "id": "crates_env_contract_check_src_lib_parsedvalue",
       "label": "ParsedValue",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "parsedvalue",
       "source_file": "crates/env-contract-check/src/lib.rs",
@@ -1120,7 +1172,7 @@
       "id": "crates_env_contract_check_src_lib_rs_string",
       "label": "String",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "string",
       "source_file": "",
@@ -1130,11 +1182,121 @@
       "id": "crates_env_contract_check_src_lib_validate_values",
       "label": "validate_values()",
       "_origin": "ast",
-      "community": 6,
+      "community": 5,
       "file_type": "code",
       "norm_label": "validate_values()",
       "source_file": "crates/env-contract-check/src/lib.rs",
       "source_location": "L447"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_decode_double_quoted",
+      "label": "decode_double_quoted()",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "decode_double_quoted()",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L406"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_diagnostic",
+      "label": "Diagnostic",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "diagnostic",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L86"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_parse_dotenv_value",
+      "label": "parse_dotenv_value()",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "parse_dotenv_value()",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L341"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_rs_option",
+      "label": "Option",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "option",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_severity",
+      "label": "Severity",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "severity",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L80"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_type_error",
+      "label": "type_error()",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "type_error()",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L614"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_validate_type",
+      "label": "validate_type()",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "validate_type()",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L546"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_valuetype",
+      "label": "ValueType",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "valuetype",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L69"
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_variablerule",
+      "label": "VariableRule",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "variablerule",
+      "source_file": "crates/env-contract-check/src/lib.rs",
+      "source_location": "L53"
+    },
+    {
+      "id": "into",
+      "label": "Into",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "into",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "vec",
+      "label": "Vec",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "vec",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "crates_env_contract_check_src_lib_parse_contract",
@@ -1217,84 +1379,74 @@
       "source_location": ""
     },
     {
-      "id": "crates_env_contract_check_src_lib_codes",
-      "label": "codes()",
+      "id": "site_tests_claims_spec",
+      "label": "claims.spec.ts",
       "_origin": "ast",
       "community": 8,
       "file_type": "code",
-      "norm_label": "codes()",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L737"
-    },
-    {
-      "id": "crates_env_contract_check_src_lib_diffentry",
-      "label": "DiffEntry",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "diffentry",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L107"
-    },
-    {
-      "id": "crates_env_contract_check_src_lib_diffstate",
-      "label": "DiffState",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "diffstate",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L99"
-    },
-    {
-      "id": "crates_env_contract_check_src_lib_report",
-      "label": "Report",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "report",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L121"
-    },
-    {
-      "id": "crates_env_contract_check_src_lib_summary",
-      "label": "Summary",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "summary",
-      "source_file": "crates/env-contract-check/src/lib.rs",
-      "source_location": "L114"
-    },
-    {
-      "id": "crates_env_contract_check_src_main_print_human",
-      "label": "print_human()",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "print_human()",
-      "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L122"
-    },
-    {
-      "id": "site_public_sw",
-      "label": "sw.js",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "sw.js",
-      "source_file": "site/public/sw.js",
+      "norm_label": "claims.spec.ts",
+      "source_file": "site/tests/claims.spec.ts",
       "source_location": "L1"
     },
     {
-      "id": "site_public_sw_shell",
-      "label": "SHELL",
+      "id": "site_tests_claims_spec_binary",
+      "label": "binary",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "binary",
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "site_tests_claims_spec_root",
+      "label": "root",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "root",
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "crates_env_contract_check_tests_cli",
+      "label": "cli.rs",
       "_origin": "ast",
       "community": 9,
       "file_type": "code",
-      "norm_label": "shell",
-      "source_file": "site/public/sw.js",
-      "source_location": "L2"
+      "norm_label": "cli.rs",
+      "source_file": "crates/env-contract-check/tests/cli.rs",
+      "source_location": "L1"
+    },
+    {
+      "id": "crates_env_contract_check_tests_cli_bundled_demo_runs_from_an_isolated_temp_directory",
+      "label": "bundled_demo_runs_from_an_isolated_temp_directory()",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "bundled_demo_runs_from_an_isolated_temp_directory()",
+      "source_file": "crates/env-contract-check/tests/cli.rs",
+      "source_location": "L48"
+    },
+    {
+      "id": "crates_env_contract_check_tests_cli_documented_json_example_runs_without_disclosing_secret",
+      "label": "documented_json_example_runs_without_disclosing_secret()",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "documented_json_example_runs_without_disclosing_secret()",
+      "source_file": "crates/env-contract-check/tests/cli.rs",
+      "source_location": "L5"
+    },
+    {
+      "id": "crates_env_contract_check_tests_cli_unreadable_input_uses_exit_two",
+      "label": "unreadable_input_uses_exit_two()",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "unreadable_input_uses_exit_two()",
+      "source_file": "crates/env-contract-check/tests/cli.rs",
+      "source_location": "L39"
     }
   ],
   "links": [
@@ -1595,7 +1747,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L76",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -1607,23 +1759,35 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L78",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_run",
-      "target": "crates_env_contract_check_src_main_print_human",
+      "target": "crates_env_contract_check_src_main_run_check",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L112",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_run",
+      "target": "crates_env_contract_check_src_main_run_demo",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_check",
       "target": "crates_env_contract_check_src_main_read",
       "relation": "calls",
       "_origin": "ast",
@@ -1631,7 +1795,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L88",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_check",
+      "target": "crates_env_contract_check_src_main_print_human",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_demo",
+      "target": "crates_env_contract_check_src_main_run_check",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -1643,7 +1831,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "site/src/main.ts",
-      "source_location": "L66",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -1787,19 +1975,19 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L39",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_checkargs",
-      "target": "crates_env_contract_check_src_main_rs_option",
+      "target": "option",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L43",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -1811,7 +1999,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -1823,7 +2011,31 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L24",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_command",
+      "target": "crates_env_contract_check_src_main_demoargs",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_demoargs",
+      "target": "crates_env_contract_check_src_main_profilearg",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -2111,7 +2323,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L43",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -2123,31 +2335,55 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L65",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_read",
-      "target": "crates_env_contract_check_src_main_rs_string",
+      "target": "string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L117",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_run",
-      "target": "crates_env_contract_check_src_main_rs_string",
+      "target": "string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L86",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_check",
+      "target": "string",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_demo",
+      "target": "string",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -2219,7 +2455,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -2231,7 +2467,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -2243,7 +2479,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -2255,7 +2491,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -2584,14 +2820,14 @@
     },
     {
       "source": "crates_env_contract_check_src_main_print_human",
-      "target": "crates_env_contract_check_src_lib_report",
+      "target": "report",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L122",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -2603,7 +2839,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L66",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -2615,7 +2851,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L117",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -2627,7 +2863,31 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L86",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_check",
+      "target": "crates_env_contract_check_src_main_checkargs",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_demo",
+      "target": "crates_env_contract_check_src_main_demoargs",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -2747,43 +3007,67 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L75",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_profile_from",
-      "target": "crates_env_contract_check_src_main_rs_self",
+      "target": "self",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L66",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_read",
-      "target": "crates_env_contract_check_src_main_rs_result",
+      "target": "result",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L117",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
       "source": "crates_env_contract_check_src_main_run",
-      "target": "crates_env_contract_check_src_main_rs_result",
+      "target": "result",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L86",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_check",
+      "target": "result",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main_run_demo",
+      "target": "result",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -3162,13 +3446,46 @@
     },
     {
       "source": "crates_env_contract_check_src_main",
+      "target": "crates_env_contract_check_src_main_run",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main",
+      "target": "crates_env_contract_check_src_main_run_check",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main",
+      "target": "crates_env_contract_check_src_main_run_demo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main",
       "target": "crates_env_contract_check_src_main_read",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L117",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -3179,7 +3496,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L122",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -3190,7 +3507,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3201,7 +3518,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L22",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_src_main",
+      "target": "crates_env_contract_check_src_main_demoargs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "crates/env-contract-check/src/main.rs",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -3212,7 +3540,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L28",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -3223,7 +3551,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L59",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -3234,18 +3562,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L75",
-      "weight": 1.0
-    },
-    {
-      "source": "crates_env_contract_check_src_main",
-      "target": "crates_env_contract_check_src_main_run",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L86",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -3257,6 +3574,17 @@
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/tests/cli.rs",
       "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "crates_env_contract_check_tests_cli",
+      "target": "crates_env_contract_check_tests_cli_bundled_demo_runs_from_an_isolated_temp_directory",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "crates/env-contract-check/tests/cli.rs",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -3278,7 +3606,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -3344,7 +3672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -3355,7 +3683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -3366,7 +3694,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -3377,7 +3705,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -3393,7 +3721,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_build",
+      "target": "package_scripts_test_claims",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3404,13 +3732,24 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_build_site",
+      "target": "package_scripts_build",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_build_site",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -3597,7 +3936,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "site/src/main.ts",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -3619,7 +3958,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "site/src/main.ts",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -3630,7 +3969,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "site/src/main.ts",
-      "source_location": "L93",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "site_tests_claims_spec",
+      "target": "site_tests_claims_spec_runbinary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "site_tests_claims_spec",
+      "target": "site_tests_claims_spec_fixture",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "site_tests_claims_spec",
+      "target": "site_tests_claims_spec_root",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "site_tests_claims_spec",
+      "target": "site_tests_claims_spec_binary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "site/tests/claims.spec.ts",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3762,7 +4145,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L65",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -3795,7 +4178,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L66",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -3807,11 +4190,11 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "site/src/main.ts",
-      "source_location": "L183",
+      "source_location": "L189",
       "weight": 1.0
     },
     {
-      "source": "crates_env_contract_check_src_main_run",
+      "source": "crates_env_contract_check_src_main_run_check",
       "target": "crates_env_contract_check_src_lib_parse_contract",
       "relation": "calls",
       "_origin": "ast",
@@ -3819,11 +4202,11 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L89",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
-      "source": "crates_env_contract_check_src_main_run",
+      "source": "crates_env_contract_check_src_main_run_check",
       "target": "crates_env_contract_check_src_lib_check",
       "relation": "calls",
       "_origin": "ast",
@@ -3831,10 +4214,10 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "crates/env-contract-check/src/main.rs",
-      "source_location": "L96",
+      "source_location": "L119",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3abcc8cde514891e95fa7481f702a1769c3ed4ce"
+  "built_at_commit": "910991e0879f32c14478e95c7b3f709fc97d6e75"
 }
