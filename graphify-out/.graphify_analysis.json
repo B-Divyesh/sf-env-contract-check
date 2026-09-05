@@ -190,8 +190,23 @@
       "degree": 12
     },
     {
+      "id": "crates_env_contract_check_src_main_run",
+      "label": "run()",
+      "degree": 9
+    },
+    {
+      "id": "site_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 9
+    },
+    {
       "id": "crates_env_contract_check_src_lib_profile",
       "label": "Profile",
+      "degree": 9
+    },
+    {
+      "id": "crates_env_contract_check_src_lib_compare",
+      "label": "compare()",
       "degree": 9
     },
     {
@@ -205,30 +220,15 @@
       "degree": 9
     },
     {
-      "id": "crates_env_contract_check_src_lib_compare",
-      "label": "compare()",
-      "degree": 9
-    },
-    {
-      "id": "crates_env_contract_check_src_main_run",
-      "label": "run()",
-      "degree": 9
-    },
-    {
-      "id": "site_tsconfig_compileroptions",
-      "label": "compilerOptions",
-      "degree": 9
-    },
-    {
-      "id": "crates_env_contract_check_src_lib_variablerule",
-      "label": "VariableRule",
+      "id": "package_scripts",
+      "label": "scripts",
       "degree": 7
     }
   ],
   "surprises": [
     {
       "source": "run()",
-      "target": "parse_contract()",
+      "target": "check()",
       "source_files": [
         "crates/env-contract-check/src/main.rs",
         "crates/env-contract-check/src/lib.rs"
@@ -239,7 +239,7 @@
     },
     {
       "source": "run()",
-      "target": "check()",
+      "target": "parse_contract()",
       "source_files": [
         "crates/env-contract-check/src/main.rs",
         "crates/env-contract-check/src/lib.rs"
