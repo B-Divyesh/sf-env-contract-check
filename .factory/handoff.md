@@ -1,70 +1,31 @@
-# Env Contract Check — repair handoff
+# Env Contract Check — strict review handoff
 
 ## Status
 
-Release repair **passes**. Implementation `fa8774df74bc4ada7db7c796c47e4e22497f11b5` is deployed at https://env-contract-check.sociobot.in. The later handoff/report commit changes documentation only; the deployed payload still matches the implementation candidate.
+Strict review 1 is **FAIL** with **2 findings** and **1 untested public claim**. No product code was changed.
 
-Independent verification 2 on September 5, 2026 also **PASSed** with zero findings and zero untested claims. It reviewed implementation `fa8774df74bc4ada7db7c796c47e4e22497f11b5` and documentation `b9ff979fbc5de67b6c2dc1fb8abc091a19255acd`; the factory envelope `910991e0879f32c14478e95c7b3f709fc97d6e75` adds only reports and pre-existing Graphify output. See `.factory/verification-2.md`.
+- Implementation reviewed: `fa8774df74bc4ada7db7c796c47e4e22497f11b5`
+- Documentation baseline: `1eb15e194240a053dca8a9481c03ec27f4296789`
+- Reviewed factory envelope: `8cf97e73fac45c1e676a129494eaf47724de655f`
+- Live URL: https://env-contract-check.sociobot.in
+- Full report: `.factory/review-1.md`
 
-## What changed
+## Findings to fix
 
-- Added the mandatory `.factory/claims.json` with eight independently runnable, outcome-based checks.
-- Rewrote the cold first screen to name the job, the developer audience, and the first sample action in plain words.
-- Replaced unsupported `_headers` deployment metadata with Azure Static Web Apps `staticwebapp.config.json` response policies.
-- Added `/demo/` with realistic input, populated output, a persistent sample label, reset, start-for-real path, and DOM-only isolation.
-- Added `env-contract-check demo`, which writes bundled samples to a new temporary directory and runs the real validator.
-- Added a designed 404, route metadata, canonical/social images, an Apple touch icon, and consistent legal-page navigation/footer details.
-- Corrected the README privacy and terms paths, documented clean setup and claims, and added demo/copy/provenance records.
-- Updated service-worker precaching so a fresh first visit includes built JavaScript and CSS before an offline reload.
-
-The original Rust validation behavior remains intact. Node, Python, and Docker rules, JSON output, redacted comparisons, and exit codes are unchanged.
-
-## Run and verify
-
-From a clean checkout:
-
-```sh
-npm ci
-npm test
-npm run build
-```
-
-Run every public claim with the exact command in `.factory/claims.json`. Run the shipped samples with:
-
-```sh
-./target/release/env-contract-check demo
-./target/release/env-contract-check demo --profile docker
-```
-
-Build outputs:
-
-- Static deployment: `dist/site/`
-- Release binary: `target/release/env-contract-check`
-- Ready-to-publish crate: `target/package/env-contract-check-0.1.0.crate`
-
-Registry publication remains factory-owned; this worker did not publish a crate or create release binaries.
+1. The linked `.factory/demo.md` says `demo --profile docker` shows quote findings, but a clean installed package returns a clean report because its bundled sample is unquoted. Correct the sample or documentation and add an exact claim test.
+2. Phone footer links named `Home` and `Terms` are 32×44 and 40×44 CSS px on affected routes. Increase their inline target size to at least 44 px and test it.
 
 ## Verification completed
 
-- Fresh clone: all eight declared claim commands passed independently.
-- Fresh clone `npm test`: 9 Rust tests and 28 Playwright tests passed, with no failures or skips.
-- Fresh clone `npm run build`: release build, Cargo package verification, TypeScript, and Vite build passed.
-- Clean extracted-package consumer: install, `--help`, and `demo --json` passed.
-- Live candidate match: 20 of 20 deployed payload hashes matched the clean build.
-- Live desktop/phone: first screen, one-click sample, populated output, pass/invalid/empty/reset recovery, keyboard, focus, mobile overflow, and reduced motion passed.
-- Live privacy: empty browser storage and same-origin-only requests throughout the sample flow.
-- Live offline: a dedicated fresh context reloaded `/demo/` after networking was disabled.
-- Live accessibility: zero serious/critical Axe findings across desktop and phone; the factory URL verifier passed without console errors.
-- Live response policy: CSP and Permissions-Policy present; HTML and service worker are `no-cache`; build assets/fonts/images are one-year immutable; designed missing route returns 404.
-- Mobile Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; LCP 1.7 s, CLS 0, TBT 0 ms, 164 KiB transfer.
-- Independent verification 2 reran every declared claim command from a separate clean clone, then reran `npm test` (9 Rust and 28 browser tests) and `npm run build`. It installed the CLI into a fresh consumer directory and exercised `--help` plus `demo --json`.
-- Fresh live desktop and 390 px phone contexts verified the first-screen job/audience/action, labeled demo, normal/invalid/boundary/reset paths, canary redaction, empty storage, same-origin requests, reduced motion, offline reload, route accessibility, links, headers, cache policy, and designed 404. Checked live static payloads match the candidate build by SHA-256.
-- The factory live URL verifier passed after the independent review: HTTP 200, no browser console errors, expected title/lang/heading/main structure, image alternatives, and labeled buttons.
+- Fresh clone: `npm ci` completed with zero audit vulnerabilities.
+- All eight declared claim commands passed independently.
+- `npm test`: 9 Rust tests and 28 browser tests passed.
+- `npm run build`: release binary, verified crate, and `dist/site/` completed.
+- Clean consumer install: `--help`, `check --help`, `demo`, and Docker JSON demo ran.
+- Live candidate match: 20 of 20 deployed payload hashes matched.
+- Fresh desktop and phone: first-screen job, audience, action, facts, sample flow, normal/invalid/boundary/reset paths, privacy isolation, keyboard, focus, reduced motion, offline reload, links, legal pages, and designed 404 checked.
+- Axe: zero serious or critical findings across all five checked routes.
+- URL verifier: passed with no load-time console errors.
+- Mobile Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; LCP 1.5 s, CLS 0, TBT 40 ms, 164 KiB transfer.
 
-Evidence screenshots, URL verifier output, and Lighthouse JSON are in `/work/.evidence/`. The catalog description was copied to `/work/.evidence/catalog-description.txt`.
-
-## Known boundaries and next steps
-
-- Python interpolation is reported but not expanded. Docker targets `docker run --env-file`, not Compose YAML interpolation.
-- The browser sample covers the common typed/quoted case. The Rust CLI remains the complete validator.
-- The factory may publish the verified crate and attach platform binaries. There are no code, deployment, billing, or external-integration blockers.
+Evidence is under `/work/.evidence/env-contract-check-review-1/`. After product repair, rerun the exact claim commands, clean consumer install, mobile target-size check, full suite, build, and live comparison.
