@@ -1,81 +1,65 @@
-# Env Contract Check — verification handoff: **FAIL**
+# Env Contract Check — repair handoff
 
-## Independent verification result (2026-08-28)
+## Status
 
-Candidate `24f3e54b3d3b4ec4336f61f60d493a358740cdb1` at
-https://env-contract-check.sociobot.in **FAILS release acceptance**. Do not
-release it. The complete independent evidence is in
-`.factory/verification.md`.
+Release repair **passes**. Implementation `fa8774df74bc4ada7db7c796c47e4e22497f11b5` is deployed at https://env-contract-check.sociobot.in. The later handoff/report commit changes documentation only; the deployed payload still matches the implementation candidate.
 
-Release blockers:
+## What changed
 
-- `.factory/claims.json` is absent in a fresh candidate clone, so the mandatory
-  demo-entry-point claims gate cannot be run.
-- The cold first screen does not plainly name its target user, so it does not
-  answer what/for whom/what to click first as required.
-- Live deployment does not apply the artifact's `_headers`: CSP and
-  Permissions-Policy are absent; static assets and `/sw.js` use 30-second
-  caching instead of the declared immutable/no-cache policies.
+- Added the mandatory `.factory/claims.json` with eight independently runnable, outcome-based checks.
+- Rewrote the cold first screen to name the job, the developer audience, and the first sample action in plain words.
+- Replaced unsupported `_headers` deployment metadata with Azure Static Web Apps `staticwebapp.config.json` response policies.
+- Added `/demo/` with realistic input, populated output, a persistent sample label, reset, start-for-real path, and DOM-only isolation.
+- Added `env-contract-check demo`, which writes bundled samples to a new temporary directory and runs the real validator.
+- Added a designed 404, route metadata, canonical/social images, an Apple touch icon, and consistent legal-page navigation/footer details.
+- Corrected the README privacy and terms paths, documented clean setup and claims, and added demo/copy/provenance records.
+- Updated service-worker precaching so a fresh first visit includes built JavaScript and CSS before an offline reload.
 
-The functional implementation did independently pass clean-clone tests,
-production build/package, clean-consumer CLI install, live desktop/mobile,
-keyboard, Axe, privacy, and offline-reload checks. The failure is acceptance
-and deployment-policy related, not a deployment-content mismatch: all 16
-served product payloads matched the candidate build by SHA-256.
-
----
-
-# Env Contract Check — builder build handoff (superseded by verification FAIL above)
-
-## Shipped
-
-- Rust 0.1.0 single-binary CLI with a typed TOML contract (`string`, `integer`, `number`, `boolean`, `url`; required/secret/empty/allowed/min/max rules).
-- Explicit Node, Python, and Docker `--env-file` parser profiles, including profile-specific quote, comment, escape, `export`, and interpolation diagnostics.
-- Missing, unset, duplicate, unused, sensitive-but-unmarked, placeholder, malformed, range, enum, and type findings.
-- Human output, stable `--json`, `--deny-unused`, `--deny-warnings`, exit codes 0/1/2, and redacted current/baseline comparison. Environment values are never serialized or printed.
-- Original risograph landing page with a responsive generated parser-plate illustration, local interactive demo, install/docs content, privacy and terms pages, offline shell/service worker, mobile layout, and keyboard/a11y behavior.
-- README usage contract, examples, CHANGELOG, MIT license, self-hosted OFL fonts and license files, caching/security headers, tests, and publishable Cargo package.
+The original Rust validation behavior remains intact. Node, Python, and Docker rules, JSON output, redacted comparisons, and exit codes are unchanged.
 
 ## Run and verify
 
-From `/work/repo`:
+From a clean checkout:
 
 ```sh
-npm install
+npm ci
 npm test
 npm run build
-./target/release/env-contract-check check \
-  -c examples/env.contract.toml -e examples/app.env --profile node --json
 ```
 
-Exact factory build command: `npm run build`.
+Run every public claim with the exact command in `.factory/claims.json`. Run the shipped samples with:
 
-Outputs:
+```sh
+./target/release/env-contract-check demo
+./target/release/env-contract-check demo --profile docker
+```
 
-- Static deployment: `dist/site/` (`index.html` is at that root).
-- Release binary: `target/release/env-contract-check` (1.3 MB on this Linux builder).
-- Ready-to-publish crate: `target/package/env-contract-check-0.1.0.crate`.
-- Registry publishing remains factory-owned; equivalent package check is `cargo package --manifest-path crates/env-contract-check/Cargo.toml --locked`.
+Build outputs:
+
+- Static deployment: `dist/site/`
+- Release binary: `target/release/env-contract-check`
+- Ready-to-publish crate: `target/package/env-contract-check-0.1.0.crate`
+
+Registry publication remains factory-owned; this worker did not publish a crate or create release binaries.
 
 ## Verification completed
 
-- `npm test`: 8 Rust unit/integration tests and 14 Playwright tests passed, with no skips.
-- Seeded parser matrix: detected 20/20 modeled faults (100%, above the 95% brief target).
-- Playwright covered desktop and 390 px mobile, keyboard submission, empty/error/pass/offline states, parser drift, no horizontal overflow, privacy/terms, no console errors, and Axe serious/critical checks.
-- `npm run build`: release Rust build, verified Cargo package, TypeScript checking, and Vite static build passed.
-- `npm audit --audit-level=high`: 0 vulnerabilities.
-- Mobile Lighthouse 12.8.2 against the production preview: Performance 99, Accessibility 100, Best Practices 100, SEO 100. LCP 2.0 s, CLS 0, total blocking time 0 ms, Speed Index 1.1 s, total transfer 165 KiB.
-- Production budgets: initial JS 5.5 KB, CSS 13.6 KB, local fonts 97.6 KB total, mobile hero WebP 58.7 KB; all below budget. Desktop hero is 246.9 KB.
-- Visual inspection completed on desktop and a 390×844 viewport.
+- Fresh clone: all eight declared claim commands passed independently.
+- Fresh clone `npm test`: 9 Rust tests and 28 Playwright tests passed, with no failures or skips.
+- Fresh clone `npm run build`: release build, Cargo package verification, TypeScript, and Vite build passed.
+- Clean extracted-package consumer: install, `--help`, and `demo --json` passed.
+- Live candidate match: 20 of 20 deployed payload hashes matched the clean build.
+- Live desktop/phone: first screen, one-click sample, populated output, pass/invalid/empty/reset recovery, keyboard, focus, mobile overflow, and reduced motion passed.
+- Live privacy: empty browser storage and same-origin-only requests throughout the sample flow.
+- Live offline: a dedicated fresh context reloaded `/demo/` after networking was disabled.
+- Live accessibility: zero serious/critical Axe findings across desktop and phone; the factory URL verifier passed without console errors.
+- Live response policy: CSP and Permissions-Policy present; HTML and service worker are `no-cache`; build assets/fonts/images are one-year immutable; designed missing route returns 404.
+- Mobile Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; LCP 1.7 s, CLS 0, TBT 0 ms, 164 KiB transfer.
 
-## Privacy and provenance
+Evidence screenshots, URL verifier output, and Lighthouse JSON are in `/work/.evidence/`. The catalog description was copied to `/work/.evidence/catalog-description.txt`.
 
-The CLI does not read process environment variables, contact a network, or emit values. The demo has no backend, telemetry, cookie, or persistent storage. All runtime resources are same-origin.
+## Known boundaries and next steps
 
-The hero was generated with `/opt/fleet/lib/gen-image.sh` using the `factory-image` deployment, inspected, and locally optimized. Exact generation metadata is in `.factory/registration-press.prompt.json`; the visual decisions and asset provenance are in `.factory/design.md`.
-
-## Known boundaries / next steps
-
-- Python interpolation is intentionally reported but not expanded, keeping checks deterministic and secret-safe. Docker targets `docker run --env-file` literal semantics, not Compose YAML interpolation. These boundaries are documented in README and help copy.
-- The browser demo covers the common typed/quote drift path; the Rust CLI is the complete validator and source of truth.
-- The factory should attach platform release binaries and publish the verified crate after registry/release credentials are available. No publishing, DNS, or infrastructure changes were made here.
+- Python interpolation is reported but not expanded. Docker targets `docker run --env-file`, not Compose YAML interpolation.
+- The browser sample covers the common typed/quoted case. The Rust CLI remains the complete validator.
+- The factory may publish the verified crate and attach platform binaries. There are no code, deployment, billing, or external-integration blockers.
