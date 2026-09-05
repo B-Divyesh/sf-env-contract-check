@@ -63,6 +63,7 @@ Fresh desktop and phone browser contexts exercised the following paths at the li
 - The first keyboard focus target was the visible 3 px skip-link outline. Forms and reset controls operated by keyboard in the local full suite.
 - Reduced-motion result-panel duration was `1e-05s`. A service-worker-controlled fresh context reloaded `/demo/` offline with the populated sample result intact.
 - Axe found zero serious or critical violations on `/`, `/demo/`, `/privacy/`, `/terms/`, and the missing-page route. Each has `lang=en`, one `<h1>`, one `<main>`, and no image without alternative text.
+- `/opt/fleet/lib/verify-url.sh` passed against the live home page: HTTP 200, no console errors, title/lang/heading/main checks, no missing image alternative text, and no unlabeled buttons.
 - Route titles are specific: landing, Demo, Privacy, Terms, and Page not found. All reachable product and source links returned 200. The skip link on the deliberate missing URL naturally retains that URL’s 404 response.
 - `/this-page-does-not-exist` returned HTTP 404 with a complete styled page, one heading, one main landmark, and routes back to the product. The browser’s expected failed-resource console entry for that deliberate 404 is not a defect.
 

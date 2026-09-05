@@ -59,6 +59,7 @@ Registry publication remains factory-owned; this worker did not publish a crate 
 - Mobile Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; LCP 1.7 s, CLS 0, TBT 0 ms, 164 KiB transfer.
 - Independent verification 2 reran every declared claim command from a separate clean clone, then reran `npm test` (9 Rust and 28 browser tests) and `npm run build`. It installed the CLI into a fresh consumer directory and exercised `--help` plus `demo --json`.
 - Fresh live desktop and 390 px phone contexts verified the first-screen job/audience/action, labeled demo, normal/invalid/boundary/reset paths, canary redaction, empty storage, same-origin requests, reduced motion, offline reload, route accessibility, links, headers, cache policy, and designed 404. Checked live static payloads match the candidate build by SHA-256.
+- The factory live URL verifier passed after the independent review: HTTP 200, no browser console errors, expected title/lang/heading/main structure, image alternatives, and labeled buttons.
 
 Evidence screenshots, URL verifier output, and Lighthouse JSON are in `/work/.evidence/`. The catalog description was copied to `/work/.evidence/catalog-description.txt`.
 
