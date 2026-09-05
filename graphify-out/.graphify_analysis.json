@@ -69,24 +69,6 @@
       "site_src_main_updateoffline"
     ],
     "3": [
-      "crates_env_contract_check_src_lib",
-      "crates_env_contract_check_src_lib_check",
-      "crates_env_contract_check_src_lib_checkoptions",
-      "crates_env_contract_check_src_lib_clean_node_file_passes",
-      "crates_env_contract_check_src_lib_codes",
-      "crates_env_contract_check_src_lib_invalid_contracts_are_rejected",
-      "crates_env_contract_check_src_lib_parse_env",
-      "crates_env_contract_check_src_lib_parser_profiles_disagree_about_quotes",
-      "crates_env_contract_check_src_lib_profile",
-      "crates_env_contract_check_src_lib_python_export_and_interpolation_are_profile_specific",
-      "crates_env_contract_check_src_lib_report",
-      "crates_env_contract_check_src_lib_secret_values_never_serialize",
-      "crates_env_contract_check_src_lib_seeded_faults_are_detected",
-      "crates_env_contract_check_src_lib_summary",
-      "crates_env_contract_check_src_lib_surrounded_by_quote",
-      "fromstr"
-    ],
-    "4": [
       "ref_dom",
       "ref_dom_iterable",
       "ref_es2022",
@@ -104,20 +86,22 @@
       "site_tsconfig_compileroptions_usedefineforclassfields",
       "site_tsconfig_include"
     ],
-    "5": [
-      "btreemap",
-      "crates_env_contract_check_src_lib_compare",
-      "crates_env_contract_check_src_lib_contract",
-      "crates_env_contract_check_src_lib_diffentry",
-      "crates_env_contract_check_src_lib_diffstate",
-      "crates_env_contract_check_src_lib_looks_like_placeholder",
-      "crates_env_contract_check_src_lib_looks_sensitive_key",
-      "crates_env_contract_check_src_lib_parsedenv",
-      "crates_env_contract_check_src_lib_parsedvalue",
-      "crates_env_contract_check_src_lib_rs_string",
-      "crates_env_contract_check_src_lib_validate_values"
+    "4": [
+      "crates_env_contract_check_src_lib",
+      "crates_env_contract_check_src_lib_check",
+      "crates_env_contract_check_src_lib_checkoptions",
+      "crates_env_contract_check_src_lib_clean_node_file_passes",
+      "crates_env_contract_check_src_lib_invalid_contracts_are_rejected",
+      "crates_env_contract_check_src_lib_parse_env",
+      "crates_env_contract_check_src_lib_parser_profiles_disagree_about_quotes",
+      "crates_env_contract_check_src_lib_profile",
+      "crates_env_contract_check_src_lib_python_export_and_interpolation_are_profile_specific",
+      "crates_env_contract_check_src_lib_secret_values_never_serialize",
+      "crates_env_contract_check_src_lib_seeded_faults_are_detected",
+      "crates_env_contract_check_src_lib_surrounded_by_quote",
+      "fromstr"
     ],
-    "6": [
+    "5": [
       "crates_env_contract_check_src_lib_decode_double_quoted",
       "crates_env_contract_check_src_lib_diagnostic",
       "crates_env_contract_check_src_lib_parse_dotenv_value",
@@ -130,6 +114,17 @@
       "into",
       "vec"
     ],
+    "6": [
+      "btreemap",
+      "crates_env_contract_check_src_lib_compare",
+      "crates_env_contract_check_src_lib_contract",
+      "crates_env_contract_check_src_lib_looks_like_placeholder",
+      "crates_env_contract_check_src_lib_looks_sensitive_key",
+      "crates_env_contract_check_src_lib_parsedenv",
+      "crates_env_contract_check_src_lib_parsedvalue",
+      "crates_env_contract_check_src_lib_rs_string",
+      "crates_env_contract_check_src_lib_validate_values"
+    ],
     "7": [
       "crates_env_contract_check_src_lib_parse_contract",
       "crates_env_contract_check_src_lib_profile_as_str",
@@ -141,44 +136,51 @@
       "err"
     ],
     "8": [
+      "crates_env_contract_check_src_lib_codes",
+      "crates_env_contract_check_src_lib_diffentry",
+      "crates_env_contract_check_src_lib_diffstate",
+      "crates_env_contract_check_src_lib_report",
+      "crates_env_contract_check_src_lib_summary"
+    ],
+    "9": [
       "site_tests_claims_spec",
       "site_tests_claims_spec_binary",
       "site_tests_claims_spec_fixture",
       "site_tests_claims_spec_root",
       "site_tests_claims_spec_runbinary"
     ],
-    "9": [
+    "10": [
       "crates_env_contract_check_tests_cli",
       "crates_env_contract_check_tests_cli_bundled_demo_runs_from_an_isolated_temp_directory",
       "crates_env_contract_check_tests_cli_documented_json_example_runs_without_disclosing_secret",
       "crates_env_contract_check_tests_cli_unreadable_input_uses_exit_two"
     ],
-    "10": [
+    "11": [
       "site_public_sw",
       "site_public_sw_shell"
     ],
-    "11": [
+    "12": [
       "crates_env_contract_check_src_main_rs_option"
     ],
-    "12": [
+    "13": [
       "crates_env_contract_check_src_main_rs_result"
     ],
-    "13": [
+    "14": [
       "crates_env_contract_check_src_main_rs_self"
     ],
-    "14": [
+    "15": [
       "crates_env_contract_check_src_main_rs_string"
     ],
-    "15": [
+    "16": [
       "pkg_env_contract_check"
     ],
-    "16": [
+    "17": [
       "playwright_config"
     ],
-    "17": [
+    "18": [
       "site_tests_site_spec"
     ],
-    "18": [
+    "19": [
       "site_vite_config"
     ]
   },
@@ -186,14 +188,14 @@
     "0": 0.09090909090909091,
     "1": 0.19913419913419914,
     "2": 0.11764705882352941,
-    "3": 0.25,
-    "4": 0.125,
-    "5": 0.36363636363636365,
-    "6": 0.3090909090909091,
+    "3": 0.125,
+    "4": 0.2948717948717949,
+    "5": 0.3090909090909091,
+    "6": 0.4722222222222222,
     "7": 0.35714285714285715,
     "8": 0.4,
-    "9": 0.5,
-    "10": 1.0,
+    "9": 0.4,
+    "10": 0.5,
     "11": 1.0,
     "12": 1.0,
     "13": 1.0,
@@ -201,7 +203,8 @@
     "15": 1.0,
     "16": 1.0,
     "17": 1.0,
-    "18": 1.0
+    "18": 1.0,
+    "19": 1.0
   },
   "gods": [
     {
@@ -210,13 +213,13 @@
       "degree": 15
     },
     {
-      "id": "crates_env_contract_check_src_lib_diagnostic",
-      "label": "Diagnostic",
+      "id": "crates_env_contract_check_src_lib_validate_values",
+      "label": "validate_values()",
       "degree": 12
     },
     {
-      "id": "crates_env_contract_check_src_lib_validate_values",
-      "label": "validate_values()",
+      "id": "crates_env_contract_check_src_lib_diagnostic",
+      "label": "Diagnostic",
       "degree": 12
     },
     {
@@ -225,13 +228,13 @@
       "degree": 10
     },
     {
-      "id": "site_tsconfig_compileroptions",
-      "label": "compilerOptions",
+      "id": "crates_env_contract_check_src_lib_profile",
+      "label": "Profile",
       "degree": 9
     },
     {
-      "id": "crates_env_contract_check_src_lib_profile",
-      "label": "Profile",
+      "id": "site_tsconfig_compileroptions",
+      "label": "compilerOptions",
       "degree": 9
     },
     {
@@ -245,13 +248,13 @@
       "degree": 9
     },
     {
-      "id": "crates_env_contract_check_src_lib_report",
-      "label": "Report",
+      "id": "package_scripts",
+      "label": "scripts",
       "degree": 8
     },
     {
-      "id": "package_scripts",
-      "label": "scripts",
+      "id": "crates_env_contract_check_src_lib_report",
+      "label": "Report",
       "degree": 8
     }
   ],
