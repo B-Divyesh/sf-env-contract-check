@@ -4,6 +4,8 @@
 
 Release repair **passes**. Implementation `fa8774df74bc4ada7db7c796c47e4e22497f11b5` is deployed at https://env-contract-check.sociobot.in. The later handoff/report commit changes documentation only; the deployed payload still matches the implementation candidate.
 
+Independent verification 2 on September 5, 2026 also **PASSed** with zero findings and zero untested claims. It reviewed implementation `fa8774df74bc4ada7db7c796c47e4e22497f11b5` and documentation `b9ff979fbc5de67b6c2dc1fb8abc091a19255acd`; the factory envelope `910991e0879f32c14478e95c7b3f709fc97d6e75` adds only reports and pre-existing Graphify output. See `.factory/verification-2.md`.
+
 ## What changed
 
 - Added the mandatory `.factory/claims.json` with eight independently runnable, outcome-based checks.
@@ -55,6 +57,8 @@ Registry publication remains factory-owned; this worker did not publish a crate 
 - Live accessibility: zero serious/critical Axe findings across desktop and phone; the factory URL verifier passed without console errors.
 - Live response policy: CSP and Permissions-Policy present; HTML and service worker are `no-cache`; build assets/fonts/images are one-year immutable; designed missing route returns 404.
 - Mobile Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; LCP 1.7 s, CLS 0, TBT 0 ms, 164 KiB transfer.
+- Independent verification 2 reran every declared claim command from a separate clean clone, then reran `npm test` (9 Rust and 28 browser tests) and `npm run build`. It installed the CLI into a fresh consumer directory and exercised `--help` plus `demo --json`.
+- Fresh live desktop and 390 px phone contexts verified the first-screen job/audience/action, labeled demo, normal/invalid/boundary/reset paths, canary redaction, empty storage, same-origin requests, reduced motion, offline reload, route accessibility, links, headers, cache policy, and designed 404. Checked live static payloads match the candidate build by SHA-256.
 
 Evidence screenshots, URL verifier output, and Lighthouse JSON are in `/work/.evidence/`. The catalog description was copied to `/work/.evidence/catalog-description.txt`.
 
