@@ -1,8 +1,12 @@
-const CACHE = "env-contract-check-v1";
+const CACHE = "env-contract-check-v2";
 const SHELL = [
   "/",
+  "/demo/",
   "/privacy/",
   "/terms/",
+  "/404.html",
+  "/mark.svg",
+  "/apple-touch-icon.png",
   "/registration-press-720.webp",
   "/registration-press.webp",
   "/fonts/fraunces-latin.woff2",
@@ -11,8 +15,18 @@ const SHELL = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)));
-  self.skipWaiting();
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await cache.addAll(SHELL);
+    const assets = new Set();
+    for (const path of ["/", "/demo/", "/privacy/", "/terms/", "/404.html"]) {
+      const response = await cache.match(path);
+      const html = response ? await response.clone().text() : "";
+      for (const match of html.matchAll(/["'](\/assets\/[^"']+)["']/g)) assets.add(match[1]);
+    }
+    await cache.addAll([...assets]);
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener("activate", (event) => {

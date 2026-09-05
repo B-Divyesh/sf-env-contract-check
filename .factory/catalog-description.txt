@@ -1,0 +1,1 @@
+Validate .env files across Node, Python, and Docker before parser differences break a deployment.

@@ -5,6 +5,10 @@ use env_contract_check::{
 use std::fs;
 use std::path::PathBuf;
 use std::process::ExitCode;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+const DEMO_CONTRACT: &str = include_str!("../demo/env.contract.toml");
+const DEMO_ENV: &str = include_str!("../demo/app.env");
 
 #[derive(Parser)]
 #[command(
@@ -22,6 +26,19 @@ struct Cli {
 enum Command {
     /// Validate an environment file and optionally compare a baseline
     Check(CheckArgs),
+    /// Run a bundled sample in a temporary directory
+    Demo(DemoArgs),
+}
+
+#[derive(Args)]
+struct DemoArgs {
+    /// Parser semantics used by the sample run
+    #[arg(short, long, value_enum, default_value = "node")]
+    profile: ProfileArg,
+
+    /// Emit stable JSON for CI and editor tooling
+    #[arg(long)]
+    json: bool,
 }
 
 #[derive(Args)]
@@ -84,7 +101,13 @@ fn main() -> ExitCode {
 }
 
 fn run(cli: Cli) -> Result<bool, String> {
-    let Command::Check(args) = cli.command;
+    match cli.command {
+        Command::Check(args) => run_check(args),
+        Command::Demo(args) => run_demo(args),
+    }
+}
+
+fn run_check(args: CheckArgs) -> Result<bool, String> {
     let contract_source = read(&args.contract, "contract")?;
     let contract = parse_contract(&contract_source)?;
     let current = read(&args.env_file, "environment file")?;
@@ -112,6 +135,40 @@ fn run(cli: Cli) -> Result<bool, String> {
         print_human(&report);
     }
     Ok(report.ok)
+}
+
+fn run_demo(args: DemoArgs) -> Result<bool, String> {
+    let stamp = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map_err(|error| format!("could not create demo directory name: {error}"))?
+        .as_millis();
+    let directory = std::env::temp_dir().join(format!(
+        "env-contract-check-demo-{}-{stamp}",
+        std::process::id()
+    ));
+    fs::create_dir(&directory).map_err(|error| {
+        format!(
+            "could not create demo directory {}: {error}",
+            directory.display()
+        )
+    })?;
+    let contract_path = directory.join("env.contract.toml");
+    let env_path = directory.join("app.env");
+    fs::write(&contract_path, DEMO_CONTRACT)
+        .map_err(|error| format!("could not write demo contract: {error}"))?;
+    fs::write(&env_path, DEMO_ENV)
+        .map_err(|error| format!("could not write demo environment file: {error}"))?;
+
+    eprintln!("Demo files: {}", directory.display());
+    run_check(CheckArgs {
+        contract: contract_path,
+        env_file: env_path,
+        profile: args.profile,
+        baseline: None,
+        json: args.json,
+        deny_unused: false,
+        deny_warnings: false,
+    })
 }
 
 fn read(path: &PathBuf, label: &str) -> Result<String, String> {

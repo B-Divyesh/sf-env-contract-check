@@ -43,3 +43,23 @@ fn unreadable_input_uses_exit_two() {
         .unwrap();
     assert_eq!(output.status.code(), Some(2));
 }
+
+#[test]
+fn bundled_demo_runs_from_an_isolated_temp_directory() {
+    let output = Command::new(env!("CARGO_BIN_EXE_env-contract-check"))
+        .args(["demo", "--json"])
+        .output()
+        .unwrap();
+
+    assert_eq!(output.status.code(), Some(0));
+    let report: serde_json::Value = serde_json::from_slice(&output.stdout).unwrap();
+    assert_eq!(report["ok"], true);
+    assert_eq!(report["summary"]["checked"], 4);
+
+    let stderr = String::from_utf8(output.stderr).unwrap();
+    let directory = stderr.strip_prefix("Demo files: ").unwrap().trim();
+    let directory = std::path::Path::new(directory);
+    assert!(directory.join("env.contract.toml").is_file());
+    assert!(directory.join("app.env").is_file());
+    assert!(directory.starts_with(std::env::temp_dir()));
+}

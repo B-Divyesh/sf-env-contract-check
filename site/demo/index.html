@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4ebd6" />
+    <meta name="description" content="Check a sample .env file against Docker parser rules without uploading or saving its contents." />
+    <meta property="og:title" content="Demo — Env Contract Check" />
+    <meta property="og:description" content="Check a sample .env file against Docker parser rules in your browser." />
+    <meta property="og:image" content="https://env-contract-check.sociobot.in/env-contract-check-social.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://env-contract-check.sociobot.in/demo/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Demo — Env Contract Check</title>
+    <link rel="canonical" href="https://env-contract-check.sociobot.in/demo/" />
+    <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body data-demo="true">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Env Contract Check home">
+        <span class="registration-mark" aria-hidden="true"></span>
+        <span>env / contract / check</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/#install">Install</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+    </header>
+
+    <main id="main" class="demo-page">
+      <section class="demo-intro" aria-labelledby="demo-page-title">
+        <p class="eyebrow">Browser demo</p>
+        <h1 id="demo-page-title" tabindex="-1">Check a sample <code>.env</code> file</h1>
+        <p class="lede">See how Docker handles quoted values that Node reads without the quotes.</p>
+      </section>
+
+      <aside class="demo-banner" aria-label="Demo status">
+        <strong>Demo — sample data, nothing is saved</strong>
+        <div>
+          <button class="text-button" id="reset-demo" type="button">Reset demo</button>
+          <a href="/#install">Start for real</a>
+        </div>
+      </aside>
+
+      <form class="demo-workbench" id="demo-form">
+        <div class="editor-sheet">
+          <div class="editor-heading">
+            <label for="env-input">Sample environment file</label>
+            <span>app.env</span>
+          </div>
+          <textarea id="env-input" name="environment" rows="9" spellcheck="false" autocapitalize="off" aria-describedby="env-hint">APP_PORT="3000"
+DEBUG="false"
+DATABASE_URL="https://db.internal/app"
+LOG_LEVEL=info</textarea>
+          <p class="field-hint" id="env-hint">Edit the sample, switch parsers, or reset the demo.</p>
+        </div>
+
+        <div class="contract-sheet" aria-label="Sample contract">
+          <div class="editor-heading"><span>Contract</span><span>env.contract.toml</span></div>
+          <pre aria-label="Typed environment contract"><code><span class="toml-key">[variables.APP_PORT]</span>
+type = <span class="toml-value">"integer"</span>
+required = <span class="toml-bool">true</span>
+
+<span class="toml-key">[variables.DEBUG]</span>
+type = <span class="toml-value">"boolean"</span>
+required = <span class="toml-bool">true</span>
+
+<span class="toml-key">[variables.DATABASE_URL]</span>
+type = <span class="toml-value">"url"</span>
+secret = <span class="toml-bool">true</span></code></pre>
+        </div>
+
+        <div class="demo-controls">
+          <div class="profile-control">
+            <label for="profile">Target parser</label>
+            <select id="profile" name="profile">
+              <option value="node">Node</option>
+              <option value="docker" selected>Docker</option>
+              <option value="python">Python</option>
+            </select>
+          </div>
+          <button class="button button-primary" type="submit">Check sample contract</button>
+        </div>
+
+        <div class="result-panel is-loading" id="result-panel" tabindex="-1" aria-live="polite" aria-atomic="true">
+          <div class="result-status"><span class="status-mark" aria-hidden="true">◌</span><strong>Checking parser semantics…</strong></div>
+        </div>
+      </form>
+      <p class="offline-note" id="offline-note" hidden><strong>You’re offline.</strong> The sample and documentation still work without a server.</p>
+    </main>
+
+    <footer>
+      <div><a class="wordmark" href="/"><span class="registration-mark" aria-hidden="true"></span><span>env / contract / check</span></a><p>Validate parser-specific configuration before services start.</p></div>
+      <nav aria-label="Footer navigation"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+      <p>Built by Param Factory · Version 0.1.0</p>
+    </footer>
+  </body>
+</html>

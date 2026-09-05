@@ -1,0 +1,58 @@
+[
+  {
+    "id": "typed-parser-validation",
+    "claim": "Validates required keys, types, numeric bounds, unsafe placeholders, unused keys, and Node, Python, and Docker parser differences.",
+    "where": "landing page, README",
+    "test": "npm run test:claims -- --grep @claim:typed-parser-validation",
+    "sandbox": "temporary contract and environment files; run the built CLI across Node, Docker, and Python profiles; assert observable diagnostic codes"
+  },
+  {
+    "id": "redacted-output",
+    "claim": "Reports environment changes without printing environment values.",
+    "where": "landing page, README, CLI help",
+    "test": "npm run test:claims -- --grep @claim:redacted-output",
+    "sandbox": "temporary current and baseline files with a unique canary secret; assert human and JSON reports omit the canary and report its changed state"
+  },
+  {
+    "id": "ci-interface",
+    "claim": "Emits JSON and uses exit codes 0, 1, and 2 for CI.",
+    "where": "landing page, README",
+    "test": "npm run test:claims -- --grep @claim:ci-interface",
+    "sandbox": "temporary valid, invalid, and unreadable inputs; parse JSON and assert each documented process exit code"
+  },
+  {
+    "id": "demo-command",
+    "claim": "The CLI demo runs bundled sample files in a temporary directory.",
+    "where": "README, CLI help",
+    "test": "npm run test:claims -- --grep @claim:demo-command",
+    "sandbox": "run the built CLI demo from a clean process; assert a populated report and bundled files under the system temporary directory"
+  },
+  {
+    "id": "local-operation",
+    "claim": "The CLI validates named local files without a network request or telemetry connection.",
+    "where": "landing page, privacy page, README, CLI help",
+    "test": "npm run test:claims -- --grep @claim:local-operation",
+    "sandbox": "temporary named files; preload a socket-denial shim that records any attempted connection; assert validation passes without a network attempt"
+  },
+  {
+    "id": "demo-sandbox",
+    "claim": "The browser demo uploads or saves no sample data, and reset restores the bundled input.",
+    "where": "demo banner, landing page, privacy page, README",
+    "test": "npm run test:claims -- --grep @claim:demo-sandbox",
+    "sandbox": "fresh browser context; record every request and body, enter a canary, assert same-origin requests and empty storage, reset, then reload"
+  },
+  {
+    "id": "offline-reload",
+    "claim": "The browser demo reloads offline after the first visit.",
+    "where": "landing page, demo offline state, README",
+    "test": "npm run test:claims -- --grep @claim:offline-reload",
+    "sandbox": "dedicated fresh browser context; load /demo/, await service-worker control, disable the network, reload, and assert populated sample output"
+  },
+  {
+    "id": "consumer-install",
+    "claim": "The free MIT-licensed core installs and runs in a clean consumer directory.",
+    "where": "landing page, README",
+    "test": "npm run test:claims -- --grep @claim:consumer-install",
+    "sandbox": "new temporary Cargo install root; install the local packaged CLI, run its bundled demo, and verify the repository license grant"
+  }
+]

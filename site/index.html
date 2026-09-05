@@ -4,11 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f4ebd6" />
-    <meta name="description" content="Validate typed .env contracts against Node, Python, and Docker parser semantics before deployment." />
-    <title>Env Contract Check — catch parser drift before runtime</title>
+    <meta name="description" content="Validate typed .env files across Node, Python, and Docker before parser mistakes reach a running service." />
+    <meta property="og:title" content="Env Contract Check — validate .env parser behavior" />
+    <meta property="og:description" content="Check typed .env files across Node, Python, and Docker before deployment." />
+    <meta property="og:image" content="https://env-contract-check.sociobot.in/env-contract-check-social.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://env-contract-check.sociobot.in/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Env Contract Check — validate .env parser behavior" />
+    <meta name="twitter:description" content="Check typed .env files across Node, Python, and Docker before deployment." />
+    <meta name="twitter:image" content="https://env-contract-check.sociobot.in/env-contract-check-social.webp" />
+    <title>Env Contract Check — validate .env parser behavior</title>
+    <link rel="canonical" href="https://env-contract-check.sociobot.in/" />
     <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="/src/style.css" />
     <script type="module" src="/src/main.ts"></script>
   </head>
@@ -20,7 +33,7 @@
         <span>env / contract / check</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#demo">Try the demo</a>
+        <a href="/demo/">Demo</a>
         <a href="#install">Install</a>
         <a class="nav-github" href="https://github.com/B-Divyesh/sf-env-contract-check">GitHub</a>
       </nav>
@@ -29,17 +42,17 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span aria-hidden="true">●</span> Offline parser proof</p>
-          <h1 id="hero-title">Same <code>.env</code>.<br />Different runtime.</h1>
-          <p class="lede">Catch missing keys, quote drift, bad coercion, unsafe placeholders, and environment drift <em>before</em> your service starts.</p>
+          <p class="eyebrow"><span aria-hidden="true">●</span> CLI for <code>.env</code> files</p>
+          <h1 id="hero-title">Validate <code>.env</code> files before services start</h1>
+          <p class="lede">For developers moving settings across laptops, CI, Docker, and deployments who need parser mistakes caught before runtime.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#install">Install the CLI</a>
-            <a class="button button-quiet" href="#demo">Test parser meaning</a>
+            <a class="button button-primary" href="/demo/">Try it with sample data</a>
+            <span class="action-note">Loads a sample <code>.env</code> and checks Docker parser rules.</span>
           </div>
-          <ul class="proof-list" aria-label="Product guarantees">
-            <li>No network</li>
-            <li>No telemetry</li>
-            <li>No secret output</li>
+          <ul class="proof-list" aria-label="Product facts">
+            <li>Runs offline</li>
+            <li>Prints no secret values</li>
+            <li>Free under the MIT License</li>
           </ul>
         </div>
         <figure class="hero-art">
@@ -47,7 +60,7 @@
             <source media="(max-width: 700px)" srcset="/registration-press-720.webp" />
             <img src="/registration-press.webp" width="1440" height="960" alt="Three cyan, vermilion, and violet risograph parser plates overlap at a central registration target." fetchpriority="high" />
           </picture>
-          <figcaption><span>Fig. 01</span> One file, three semantic plates.</figcaption>
+          <figcaption><span>Fig. 01</span> Node, Docker, and Python can read one file differently.</figcaption>
         </figure>
       </section>
 
@@ -59,9 +72,9 @@
 
       <section class="demo-section" id="demo" aria-labelledby="demo-title">
         <div class="section-intro">
-          <p class="eyebrow">Live semantic plate</p>
-          <h2 id="demo-title">See what the runtime sees.</h2>
-          <p>This browser demo uses the same core rules for the most common quoting fault. Text stays in this tab and is discarded when you leave.</p>
+          <p class="eyebrow">Browser sample</p>
+          <h2 id="demo-title">Check parser behavior in your browser</h2>
+          <p>The sample checks common type and quoting faults. Your edits stay in this tab and disappear when you leave.</p>
         </div>
         <form class="demo-workbench" id="demo-form">
           <div class="editor-sheet">
@@ -100,8 +113,8 @@ secret = <span class="toml-bool">true</span></code></pre>
                 <option value="python">Python</option>
               </select>
             </div>
-            <button class="button button-primary" type="submit">Check contract</button>
-            <button class="text-button" id="reset-demo" type="button">Reset example</button>
+            <button class="button button-primary" type="submit">Check sample contract</button>
+            <button class="text-button" id="reset-demo" type="button">Reset sample</button>
           </div>
 
           <div class="result-panel is-empty" id="result-panel" tabindex="-1" aria-live="polite" aria-atomic="true">
@@ -109,26 +122,26 @@ secret = <span class="toml-bool">true</span></code></pre>
             <p>Choose the runtime that will consume this file, then check its contract.</p>
           </div>
         </form>
-        <p class="offline-note" id="offline-note" hidden><strong>You’re offline.</strong> Good news: the demo and docs still work; nothing needed a server.</p>
+        <p class="offline-note" id="offline-note" hidden><strong>You’re offline.</strong> The demo and docs still work without a server.</p>
       </section>
 
       <section class="workflow" aria-labelledby="workflow-title">
         <div class="section-intro">
-          <p class="eyebrow">CI-sized workflow</p>
-          <h2 id="workflow-title">Contract. Parse. Prove.</h2>
+          <p class="eyebrow">How it works</p>
+          <h2 id="workflow-title">Check configuration in three steps</h2>
         </div>
         <ol class="workflow-list">
-          <li><span>01</span><div><h3>Write the contract once</h3><p>Required, typed, bounded, secret-aware. TOML stays reviewable beside your code.</p></div></li>
-          <li><span>02</span><div><h3>Name the real parser</h3><p>Node, Python, and Docker do not always agree about quotes, comments, or expansion.</p></div></li>
-          <li><span>03</span><div><h3>Fail before startup</h3><p>Human output locally; stable JSON and deliberate exit codes in CI. Values stay redacted.</p></div></li>
+          <li><span>01</span><div><h3>Write a typed contract</h3><p>Set required keys, types, bounds, allowed values, and secret handling in TOML.</p></div></li>
+          <li><span>02</span><div><h3>Choose the target parser</h3><p>Check how Node, Python, or Docker reads quotes, comments, and expansion.</p></div></li>
+          <li><span>03</span><div><h3>Stop invalid settings</h3><p>Read clear local output or use JSON and exit codes in CI.</p></div></li>
         </ol>
       </section>
 
       <section class="install-section" id="install" aria-labelledby="install-title">
         <div>
-          <p class="eyebrow">Version 0.1.0 · MIT</p>
-          <h2 id="install-title">Put it before <code>docker run</code>.</h2>
-          <p>Build the single binary from source today. Release binaries can drop into the same CI command later.</p>
+          <p class="eyebrow">Install · Version 0.1.0 · MIT</p>
+          <h2 id="install-title">Install the CLI</h2>
+          <p>Build one binary from source. Then run the same command on a laptop or in CI.</p>
         </div>
         <div class="install-terminal">
           <div class="terminal-top"><span aria-hidden="true">● ● ●</span><span>terminal</span></div>
@@ -148,15 +161,15 @@ Result: FAIL · 1 error(s), 1 warning(s)</code></pre>
 
       <section class="privacy-promise" aria-labelledby="privacy-title">
         <span class="registration-mark large" aria-hidden="true"></span>
-        <div><p class="eyebrow">A deliberately boring data policy</p><h2 id="privacy-title">Your secrets never become our data.</h2></div>
-        <p>The CLI is offline. The demo has no backend. There are no analytics, cookies, accounts, uploads, or local storage.</p>
+        <div><p class="eyebrow">Privacy</p><h2 id="privacy-title">What the tool does not do</h2></div>
+        <p>The CLI uses local files. The demo has no backend, analytics, accounts, uploads, cookies, or browser storage.</p>
       </section>
     </main>
 
     <footer>
-      <div><span class="wordmark"><span class="registration-mark" aria-hidden="true"></span><span>env / contract / check</span></span><p>Open-source configuration proof for humans and CI.</p></div>
+      <div><span class="wordmark"><span class="registration-mark" aria-hidden="true"></span><span>env / contract / check</span></span><p>Configuration validation for developers and CI.</p></div>
       <nav aria-label="Footer navigation"><a href="https://github.com/B-Divyesh/sf-env-contract-check">Source</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
-      <p>Built by the Param Factory · 2026</p>
+      <p>Built by Param Factory · Version 0.1.0</p>
     </footer>
   </body>
 </html>

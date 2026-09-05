@@ -8,6 +8,7 @@
     "dev:site": "vite --config site/vite.config.ts",
     "test": "cargo test --workspace && npm run build:site && playwright test",
     "test:site": "npm run build:site && playwright test",
+    "test:claims": "cargo build --locked && npm run build:site && playwright test --project=claims",
     "build": "cargo build --release --locked && cargo package --manifest-path crates/env-contract-check/Cargo.toml --locked --allow-dirty && npm run build:site",
     "build:site": "tsc -p site/tsconfig.json --noEmit && vite build --config site/vite.config.ts"
   },

@@ -1,8 +1,8 @@
 # Env Contract Check
 
-Catch the `.env` file that parses cleanly—and means something different in Node, Python, or Docker.
+Validate `.env` files before services start.
 
-Env Contract Check is an offline, zero-telemetry CLI for developers who move environment configuration between laptops, CI jobs, containers, and deployments. It validates required keys and types, points out parser-specific quoting hazards, flags unused or unsafe settings, and compares two environments without printing secret values.
+Env Contract Check is for developers moving configuration across laptops, CI, Docker, and deployments. It catches typed and parser-specific mistakes before runtime. Reports show key names and finding codes, but never environment values.
 
 ## Install
 
@@ -13,6 +13,19 @@ cargo install --path crates/env-contract-check
 ```
 
 Rust 1.85 or newer is required when building from source.
+
+## Try the sample
+
+Open the [browser demo](https://env-contract-check.sociobot.in/demo/) to see Docker handle quoted values. The sample stays in the tab and resets in one click.
+
+The installed CLI includes a sample command:
+
+```sh
+env-contract-check demo
+env-contract-check demo --profile docker
+```
+
+Each run writes bundled sample files to a new system temporary directory and prints its path. It uses the normal validation code.
 
 ## Usage
 
@@ -65,7 +78,9 @@ env-contract-check check -c env.contract.toml -e .env \
   --profile python --deny-warnings --json
 ```
 
-The CLI never reads the process environment, contacts a network, expands a secret, or prints an environment value. Paths and key names can appear in diagnostics. Run `env-contract-check --help` or `env-contract-check check --help` for every option.
+The CLI reads only the files named in the command. It has no account or telemetry feature. Reports never print environment values. Paths and key names can appear in diagnostics.
+
+Run `env-contract-check --help` or `env-contract-check check --help` for every option.
 
 ### Contract fields
 
@@ -91,7 +106,7 @@ Exit codes are `0` for a valid contract, `1` for validation findings that fail p
 ## Development
 
 ```sh
-npm install
+npm ci
 npm test
 npm run build
 ```
@@ -104,18 +119,23 @@ For focused work:
 cargo test --manifest-path crates/env-contract-check/Cargo.toml
 npm run dev:site
 npm run build:site
+npm run test:claims -- --grep @claim:demo-sandbox
 ```
+
+Every public product claim and its command are listed in [`.factory/claims.json`](.factory/claims.json). The sample isolation contract is in [`.factory/demo.md`](.factory/demo.md).
 
 ## Deploy
 
-Deploy `dist/site/` as a static site. No server, runtime environment variables, analytics, cookies, local storage, or third-party requests are used. The interactive demo runs entirely in the browser and does not upload pasted text.
+Deploy `dist/site/` as an Azure Static Web App. The included `staticwebapp.config.json` sets security headers, cache policies, and the designed 404 response.
+
+The site needs no server or runtime environment variables. The browser demo has no analytics, cookies, storage, uploads, or third-party requests.
 
 ## Project documents
 
 - [Visual thesis](.factory/design.md)
 - [Release notes](CHANGELOG.md)
-- [Privacy](site/privacy.html)
-- [Terms](site/terms.html)
+- [Privacy](site/privacy/index.html)
+- [Terms](site/terms/index.html)
 
 ## License
 

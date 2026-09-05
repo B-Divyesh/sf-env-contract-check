@@ -22,6 +22,7 @@ const reset = document.querySelector<HTMLButtonElement>("#reset-demo");
 const copy = document.querySelector<HTMLButtonElement>("#copy-command");
 const copyStatus = document.querySelector<HTMLSpanElement>("#copy-status");
 const offlineNote = document.querySelector<HTMLElement>("#offline-note");
+const isDemoPage = document.body.dataset.demo === "true";
 
 function parse(source: string, profile: Profile): { values: Map<string, string>; findings: Finding[] } {
   const values = new Map<string, string>();
@@ -90,7 +91,7 @@ function inspect(source: string, profile: Profile): Finding[] {
   return findings;
 }
 
-function setPanel(state: "empty" | "loading" | "pass" | "fail", findings: Finding[] = []): void {
+function setPanel(state: "empty" | "loading" | "pass" | "fail", findings: Finding[] = [], moveFocus = true): void {
   if (!panel) return;
   panel.className = `result-panel is-${state}`;
   panel.replaceChildren();
@@ -141,7 +142,7 @@ function setPanel(state: "empty" | "loading" | "pass" | "fail", findings: Findin
   }
   if (state !== "loading" && state !== "empty") {
     panel.classList.add("has-updated");
-    panel.focus({ preventScroll: true });
+    if (moveFocus) panel.focus({ preventScroll: true });
   }
 }
 
@@ -158,9 +159,14 @@ form?.addEventListener("submit", (event) => {
 reset?.addEventListener("click", () => {
   if (!input || !profileSelect) return;
   input.value = example;
-  profileSelect.value = "node";
-  setPanel("empty");
-  input.focus();
+  profileSelect.value = isDemoPage ? "docker" : "node";
+  if (isDemoPage) {
+    const findings = inspect(input.value, "docker");
+    setPanel("fail", findings);
+  } else {
+    setPanel("empty");
+    input.focus();
+  }
 });
 
 copy?.addEventListener("click", async () => {
@@ -183,6 +189,12 @@ function updateOffline(): void {
 window.addEventListener("online", updateOffline);
 window.addEventListener("offline", updateOffline);
 updateOffline();
+
+if (isDemoPage && input && profileSelect) {
+  input.value = example;
+  profileSelect.value = "docker";
+  setPanel("fail", inspect(input.value, "docker"), false);
+}
 
 if ("serviceWorker" in navigator && import.meta.env.PROD) {
   window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => undefined));

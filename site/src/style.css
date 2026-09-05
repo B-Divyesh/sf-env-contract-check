@@ -285,8 +285,20 @@ h3 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 16px;
   margin-top: 36px;
+}
+
+.action-note {
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.action-note code {
+  color: var(--danger);
+  font-weight: 600;
 }
 
 .button,
@@ -792,6 +804,63 @@ footer > p {
   padding-block: 96px 128px;
 }
 
+.not-found-page {
+  min-height: 66vh;
+  padding-block: clamp(88px, 12vw, 160px);
+}
+
+.not-found-page .lede {
+  margin-bottom: 36px;
+}
+
+.demo-page {
+  padding-block: clamp(56px, 8vw, 96px) 120px;
+}
+
+.demo-intro {
+  max-width: 850px;
+  margin-bottom: 40px;
+}
+
+.demo-intro h1 {
+  font-size: clamp(48px, 7vw, 78px);
+}
+
+.demo-banner {
+  position: sticky;
+  z-index: 20;
+  top: 8px;
+  min-height: 64px;
+  margin-bottom: 32px;
+  padding: 10px 16px;
+  border: 3px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--yellow);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.demo-banner > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.demo-banner a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.demo-banner .text-button {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .legal-page h1 {
   font-size: clamp(52px, 8vw, 88px);
 }
@@ -876,6 +945,10 @@ footer > p {
     width: 100%;
   }
 
+  .action-note {
+    max-width: none;
+  }
+
   .hero-art {
     box-shadow: 6px 6px 0 var(--red), -5px -5px 0 var(--blue);
   }
@@ -954,6 +1027,21 @@ footer > p {
   footer nav,
   footer > p {
     grid-column: auto;
+  }
+
+  .demo-page {
+    padding-top: 48px;
+  }
+
+  .demo-banner {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .demo-banner > div {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 

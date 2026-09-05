@@ -34,6 +34,8 @@ Only state change moves. On entry, the three ink plates settle from a 4 px regis
 ## Original asset plan and provenance
 
 - `site/public/registration-press.webp`: original hero illustration generated for this product using the factory image generator (`/opt/fleet/lib/gen-image.sh`, `factory-image` deployment), then inspected and resized/encoded locally as 1440×960 WebP (241 KB), with a 720×480 responsive derivative (58 KB). The exact generator prompt and deployment record are preserved in `.factory/registration-press.prompt.json`; the prompt describes three translucent Node/Docker/Python risograph plates meeting at a registration target on torn paper, with explicit constraints against readable words, logos, gradients, photorealism, and watermarks. The image is explanatory atmosphere and has descriptive alt text.
+- `site/public/env-contract-check-social.webp`: a 1200×630 center crop of the original registration-press art, made locally with ImageMagick for social previews. No new source material was introduced.
+- `site/public/apple-touch-icon.png`: a local raster rendering of the hand-made registration mark and project palette.
 - Registration marks, terminal rules, icons, and dot textures are hand-made in CSS. They are simple product-native interface motifs, not borrowed assets.
 
 Generated art is project-owned output. Fonts use their upstream OFL licenses and are self-hosted; attribution files are kept with the font assets.
