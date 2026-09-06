@@ -1,31 +1,61 @@
-# Env Contract Check — strict review handoff
+# Env Contract Check repair handoff
 
 ## Status
 
-Strict review 1 is **FAIL** with **2 findings** and **1 untested public claim**. No product code was changed.
+The strict-review findings are fixed and verified.
 
-- Implementation reviewed: `fa8774df74bc4ada7db7c796c47e4e22497f11b5`
-- Documentation baseline: `1eb15e194240a053dca8a9481c03ec27f4296789`
-- Reviewed factory envelope: `8cf97e73fac45c1e676a129494eaf47724de655f`
+- Implementation SHA: `655f7ee0eb7d46158578ef7a62d7ac3235039eb7`
+- Verification documentation SHA: `1a8872807ace794de955510c0d0544a725bbe358`
 - Live URL: https://env-contract-check.sociobot.in
-- Full report: `.factory/review-1.md`
+- Static deployment: `5fd69cd9-15e9-4a99-8acd-926e5588f7dd`
 
-## Findings to fix
+The implementation and documentation SHAs differ because the product was deployed from the implementation commit, then the verification report was recorded.
 
-1. The linked `.factory/demo.md` says `demo --profile docker` shows quote findings, but a clean installed package returns a clean report because its bundled sample is unquoted. Correct the sample or documentation and add an exact claim test.
-2. Phone footer links named `Home` and `Terms` are 32×44 and 40×44 CSS px on affected routes. Increase their inline target size to at least 44 px and test it.
+## What changed
 
-## Verification completed
+The bundled CLI sample now keeps `APP_PORT`, `DEBUG`, and `DATABASE_URL` quoted. The documented `env-contract-check demo --profile docker --json` path now uses the real installed artifact to return a redacted report with 3 errors and 3 warnings, including literal-quote findings, and exits with code 1.
 
-- Fresh clone: `npm ci` completed with zero audit vulnerabilities.
-- All eight declared claim commands passed independently.
-- `npm test`: 9 Rust tests and 28 browser tests passed.
-- `npm run build`: release binary, verified crate, and `dist/site/` completed.
-- Clean consumer install: `--help`, `check --help`, `demo`, and Docker JSON demo ran.
-- Live candidate match: 20 of 20 deployed payload hashes matched.
-- Fresh desktop and phone: first-screen job, audience, action, facts, sample flow, normal/invalid/boundary/reset paths, privacy isolation, keyboard, focus, reduced motion, offline reload, links, legal pages, and designed 404 checked.
-- Axe: zero serious or critical findings across all five checked routes.
-- URL verifier: passed with no load-time console errors.
-- Mobile Lighthouse: 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO; LCP 1.5 s, CLS 0, TBT 40 ms, 164 KiB transfer.
+`.factory/claims.json` now declares `docker-demo-findings`. Its regression test installs the CLI in a new consumer root, runs the Docker demo, checks the documented failure result, and confirms that the sample value is absent.
 
-Evidence is under `/work/.evidence/env-contract-check-review-1/`. After product repair, rerun the exact claim commands, clean consumer install, mobile target-size check, full suite, build, and live comparison.
+Footer navigation links now have a 44px minimum inline size. The mobile browser test measures links on the landing, demo, Privacy, Terms, and designed 404 pages.
+
+## How to verify
+
+From a clean checkout:
+
+```sh
+npm ci
+npm run test:claims -- --grep @claim:typed-parser-validation
+npm run test:claims -- --grep @claim:redacted-output
+npm run test:claims -- --grep @claim:ci-interface
+npm run test:claims -- --grep @claim:demo-command
+npm run test:claims -- --grep @claim:docker-demo-findings
+npm run test:claims -- --grep @claim:local-operation
+npm run test:claims -- --grep @claim:demo-sandbox
+npm run test:claims -- --grep @claim:offline-reload
+npm run test:claims -- --grep @claim:consumer-install
+npm test
+npm run build
+```
+
+All commands passed from a clean clone. The suite passed 9 Rust and 31 Playwright tests. The release build produced `target/release/`, package-verified the crate, and produced `dist/site/`.
+
+Live checks passed after deployment: `verify-url.sh`, fresh desktop and phone browser flows, 20 matching payload hashes, route titles and legal pages, internal links, mobile touch targets, offline reload, and Axe checks with zero serious or critical issues. Mobile Lighthouse scored 99 Performance, 100 Accessibility, 100 Best Practices, and 100 SEO.
+
+## Earlier finding disposition
+
+| Finding | Current disposition |
+| --- | --- |
+| Claims manifest missing | Fixed; nine declared claims passed independently. |
+| Audience missing from the first screen | Fixed; shown before scrolling on phone and desktop. |
+| Live security headers and cache policy missing | Fixed; current live responses match the static configuration. |
+| README legal links broken | Fixed; Privacy and Terms links resolve. |
+| Docker demo claimed quote findings without quoted bundled data | Fixed; installed Docker demo proves the documented result. |
+| Phone footer links under 44px wide | Fixed; every checked live footer link is at least 44×44px. |
+| Docker demo public claim lacked a test | Fixed; installed-consumer claim test added. |
+
+## Known gaps and next steps
+
+There are no known product defects from this repair. This is a free, static CLI and docs site, so payment, billing metadata, accounts, tenants, backend health, SQLite persistence, and rate-limit checks do not apply. The crate has passed `cargo package`; publishing a registry release or prebuilt binary remains a factory-owned release action.
+
+Evidence is in `/work/.evidence/env-contract-check-repair-2/`. The catalog description is also copied to `/work/.evidence/catalog-description.txt`.
