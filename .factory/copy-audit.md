@@ -1,6 +1,6 @@
 # Landing-page copy audit
 
-Audited September 5, 2026. Word counts treat `.env`, `EXTRA=1`, and hyphenated terms as one word. Navigation labels, form labels, and command output are listed separately because they are fragments rather than sentences.
+Audited September 6, 2026. Word counts treat `.env`, `EXTRA=1`, and hyphenated terms as one word. Navigation labels, form labels, and command output are listed separately because they are fragments rather than sentences.
 
 ## Sentences and standalone messages
 

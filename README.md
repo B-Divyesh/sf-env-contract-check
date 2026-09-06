@@ -27,6 +27,8 @@ env-contract-check demo --profile docker
 
 Each run writes bundled sample files to a new system temporary directory and prints its path. It uses the normal validation code.
 
+The Docker sample keeps three values quoted on purpose. `env-contract-check demo --profile docker` reports three literal-quote warnings and three typed errors, then exits with code `1`. It never prints the environment values.
+
 ## Usage
 
 Create `env.contract.toml`:
