@@ -105,6 +105,29 @@ test("@claim:demo-command runs bundled sample files in a temporary directory", (
   rmSync(directory, { recursive: true });
 });
 
+test("@claim:docker-demo-findings reports Docker literal quotes from an installed CLI", () => {
+  const installRoot = mkdtempSync(join(tmpdir(), "env-contract-check-docker-demo-"));
+  const install = spawnSync("cargo", ["install", "--path", join(root, "crates", "env-contract-check"), "--root", installRoot, "--locked", "--debug"], {
+    cwd: tmpdir(),
+    encoding: "utf8",
+    env: { ...process.env, CARGO_TARGET_DIR: join(root, "target", "claim-docker-demo") },
+  });
+  expect(install.status, install.stderr).toBe(0);
+
+  const installed = join(installRoot, "bin", process.platform === "win32" ? "env-contract-check.exe" : "env-contract-check");
+  const demo = runBinary(["demo", "--profile", "docker", "--json"], installed);
+  expect(demo.status).toBe(1);
+  const report = JSON.parse(demo.stdout);
+  expect(report).toMatchObject({
+    ok: false,
+    profile: "docker",
+    summary: { errors: 3, warnings: 3, checked: 4 },
+  });
+  expect(report.diagnostics.map((item: { code: string }) => item.code)).toEqual(expect.arrayContaining(["literal_quotes", "invalid_type"]));
+  expect(`${demo.stdout}\n${demo.stderr}`).not.toContain("https://database.internal/app");
+  rmSync(installRoot, { recursive: true });
+});
+
 test("@claim:local-operation validates named files without a network attempt", () => {
   const files = fixture(typedContract, "APP_PORT=3000\nDEBUG=false\nAPI_TOKEN=safe-token");
   const shimSource = join(files.directory, "deny-network.c");

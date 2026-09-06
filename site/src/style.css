@@ -142,6 +142,11 @@ footer nav a {
   text-decoration: none;
 }
 
+footer nav a {
+  min-inline-size: 44px;
+  justify-content: center;
+}
+
 .nav-github::after {
   content: " ↗";
   color: var(--red);

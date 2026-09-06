@@ -64,6 +64,22 @@ test("390px layout has no horizontal overflow", async ({ page }) => {
   await expect(page.getByRole("link", { name: "Try it with sample data" })).toBeVisible();
 });
 
+test("footer links provide 44px touch targets on every route", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const path of ["/", "/demo/", "/privacy/", "/terms/", "/this-page-does-not-exist"]) {
+    await page.goto(path);
+    const targets = await page.locator("footer nav a").evaluateAll((links) => links.map((link) => {
+      const { width, height } = link.getBoundingClientRect();
+      return { label: link.textContent?.trim(), width, height };
+    }));
+    expect(targets).not.toHaveLength(0);
+    for (const target of targets) {
+      expect(target.width, `${path} footer link ${target.label}`).toBeGreaterThanOrEqual(44);
+      expect(target.height, `${path} footer link ${target.label}`).toBeGreaterThanOrEqual(44);
+    }
+  }
+});
+
 test("offline state explains that local tools remain available", async ({ page, context }) => {
   await context.setOffline(true);
   await page.evaluate(() => window.dispatchEvent(new Event("offline")));

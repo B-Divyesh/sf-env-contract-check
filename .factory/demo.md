@@ -18,4 +18,4 @@ Run:
 env-contract-check demo
 ```
 
-The installed binary writes its bundled contract and `.env` sample to a new system temporary directory. It prints that path and runs the real validation code. Pass `--profile docker` to see parser-specific quote findings, or `--json` for the CI report.
+The installed binary writes its bundled contract and quoted `.env` sample to a new system temporary directory. It prints that path and runs the real validation code. Pass `--profile docker` to see three literal-quote warnings and three resulting type errors; values remain redacted. This expected failing sample exits with code `1`. Pass `--json` for the CI report.

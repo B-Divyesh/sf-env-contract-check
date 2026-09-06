@@ -28,6 +28,13 @@
     "sandbox": "run the built CLI demo from a clean process; assert a populated report and bundled files under the system temporary directory"
   },
   {
+    "id": "docker-demo-findings",
+    "claim": "The CLI Docker demo reports literal quote findings and resulting typed errors without printing environment values.",
+    "where": "README, .factory/demo.md",
+    "test": "npm run test:claims -- --grep @claim:docker-demo-findings",
+    "sandbox": "clean consumer installation; run the installed CLI demo with the Docker profile and assert its redacted parser-specific report"
+  },
+  {
     "id": "local-operation",
     "claim": "The CLI validates named local files without a network request or telemetry connection.",
     "where": "landing page, privacy page, README, CLI help",
