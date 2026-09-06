@@ -213,13 +213,13 @@
       "degree": 15
     },
     {
-      "id": "crates_env_contract_check_src_lib_validate_values",
-      "label": "validate_values()",
+      "id": "crates_env_contract_check_src_lib_diagnostic",
+      "label": "Diagnostic",
       "degree": 12
     },
     {
-      "id": "crates_env_contract_check_src_lib_diagnostic",
-      "label": "Diagnostic",
+      "id": "crates_env_contract_check_src_lib_validate_values",
+      "label": "validate_values()",
       "degree": 12
     },
     {
@@ -228,13 +228,13 @@
       "degree": 10
     },
     {
-      "id": "crates_env_contract_check_src_lib_profile",
-      "label": "Profile",
+      "id": "site_tsconfig_compileroptions",
+      "label": "compilerOptions",
       "degree": 9
     },
     {
-      "id": "site_tsconfig_compileroptions",
-      "label": "compilerOptions",
+      "id": "crates_env_contract_check_src_lib_profile",
+      "label": "Profile",
       "degree": 9
     },
     {
